@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- URL Slide -->
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/StanfordADTS2023 </p>
+</section>
+
+<!-- Title Slide -->
+
+
+<!-- Title Slide  -->
+
+<section data-background="#000000">
+    <h3>Brain and behavior</h3>
+        <p>
+            <small>Aravi Samuel</small>
+        </p>
+                                        
+        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+        <p>
+            <small>Howard Berg (1934-2021)</small>
+        </p>
+</section>
+
+<!-- Bacteria swimming  -->
+<section data-background="#000000">
+        <video loop controls='true' width='60%' height='60%' src=" assets/fluoflagella.mp4 " data-autoplay></video>
+        <p> <small> <em> E. coli </em> </small> </p>
+</section>
+
+<section data-background="#E3E3E3">
+    <p> Tracking microscope </p>
+        <p> <img src="assets/trackingberg.png" width="45%"> </p>
+        <p> <small> If life is getting better, enjoy it more.<br> If life is getting worse, don't worry about it. </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Circuits from input to output </p>
+        <img src="assets/Alon1.png" width="50%">
+</section>
+
+<section data-background="#000000">
+    <p> <i style="font-style: italic !important"> C. elegans </i> </p>
+        <img src="assets/theworms.png" width="80%">
+</section>
+
+<section data-background="#000000">
+    <p> Circuits from input to output </p>
+        <img src="assets/whiteamphids.png" width="100%">
+    <p > <small> John White et al. (1986) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Neurons encode (parts of) behaviors </p>
+        <img src="assets/ClarkFig4.png" width="60%">
+    <p > <small> Damon Clark et al. (2007) </small></p>
+</section>
+
+<section data-background="#000000">
+        <img src="assets/streetlighteffect.jpeg" width="80%">
+        <p align="left" style="font-size:26px">  “Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that’s where the light is.” </p>
+        <p align="right" style="font-size:26px">  <i style="font-style: italic !important"> - Noam Chomsky </i> </p>
+</section>
+
+<section data-background="#000000">
+    <p> Whole-brain imaging </p>
+        <img src="assets/nmeth.2434_image.jpg" width="80%">
+    <p > <small> Ahrens et al. (2013) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Mei, Vivek, and Vlad </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/mei.png" width="80%">
+            <img src="assets/vivek.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/vlad.png" width="85%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Tracking microscope </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/trackingmicroscope.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <video loop controls='true' width='80%' height='80%' src="assets/Venkatachalammovieone.mp4" data-autoplay></video>
+            <video loop controls='true' width='80%' height='80%' src="assets/Venkatachalammovietwo.mp4" data-autoplay></video>
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Low-dimensional behavior &#8594 Low-dimensional brain </p>
+            <img src="assets/hierarchicalclustering.png" width="100%">
+    <p > <small> Venkatachalam et al. (2016) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Natural behavior is high-dimensional </p> 
+        <img src="assets/naturalistic.png" width="70%">
+        <p align="center" style="font-size:25px">  
+        Every mating is the same<br><br>
+        Every mating is different
+        </p>
+</section>
+
+<section data-background="#000000">
+    <p> "Courtship" and mating </p> 
+        <video loop controls='true' width='70%' height='70%' src="assets/matingraw.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> The worm with two brains </p> 
+        <img src="assets/fluorescentnervoussystem.png" width="80%">
+        <p align="center" style="font-size:25px">  
+            Anterior $\sim$ 200 neurons &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Posterior $\sim$ 100 neurons        
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Circuits from input to output </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/phasmidpic.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/connectome.png" width="70%">
+        </div>
+    </div>
+    <p > <small> Jarrel et al. (2012) </small></p>
+</section>
+
+<section>
+        <img src="assets/Elephant.png" width="80%">
+</section>
+
+<section data-background="#000000">
+        <video loop controls='true' width='80%' height='80%' src="assets/brainmating2x.mp4" data-autoplay></video>
+        <p style="font-size:25px">
+          <span style="color:green"> GCaMP6  </span> 
+          <span style="color:red"> Neptune  </span> 
+          <span style="color:gray"> mCherry  </span> 
+        </p>
+    <p > <small> Susoy et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Measuring brain and behavior </p> 
+        <img src="assets/brainbehaviormating.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assets/behaviorsequences.png" width="70%">
+        <p align="center" style="font-size:25px">  
+        Every mating is the same<br><br>
+        Every mating is different
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Natural behavior is high-dimensional </p> 
+        <img src="assets/fullcorrelationmatrix.png" width="50%">
+        <img src="assets/fullcorrelationmatrixkey.png" width="70%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Most neurons contribute <br>
+        to multiple sub-behaviors </p> 
+        <img src="assets/Linkclustering.png" width="60%">
+        <p align="center" style="font-size:25px">  
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> A different combinatorial activity pattern <br>
+        for every sub-behavior </p> 
+        <img src="assets/Differentcorrelations.png" width="90%">
+</section>
+
+<!-- Timing patterns 
+<section data-background="#FFFFFF">
+    <p> Different timing patterns </p> 
+        <img src="assets/Differenttimingpatterns.png" width="50%">
+</section>
+-->
+
+<section data-background="#FFFFFF">
+    <p> Different sub-behaviors, <br> different muscles, <br> same neurons </p> 
+        <img src="assets/Musclesbehaviors.png" width="70%">
+</section>
+
+<!-- Different correlation patterns 
+<section data-background="#FFFFFF">
+    <p> Different motifs, different brain-wide activity patterns </p> 
+        <img src="assets/differentbehaviordifferentcorrelations.png" width="70%">
+</section>
+-->
+
+<section data-background="#FFFFFF">
+    <p> Context-dependent sensory perception  <br> diversifies brain activity </p> 
+        <img src="assets/decision-making.png" width="70%">
+</section>
+
+<section data-background="#000000">
+    <p> PVV activity as the worm turns </p> 
+        <video loop controls='true' width='70%' height='70%' src="assets/PVVshort.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> PVV ablation </p> 
+        <video loop controls='true' width='70%' height='70%' src="assets/PVVablated.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Training linear models <br> to predict behavior from activity </p> 
+        <img src="assets/linearmodels.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Trained linear models <br> predict behavior from activity </p> 
+        <img src="assets/linearmodelswork.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Diverse brain-wide activity patterns <br> emerge from diverse sensory contexts </p> 
+        <img src="assets/circuit_summary.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Connectome (by itself) <br> poorly predicts function </p> 
+        <img src="assets/connectivitypoorcorrelation.png" width="80%">
+</section>
+
+<section data-background="#000000">
+    <p> Worm connectomics<br> Daniel, Jeff, Mei, and many others 
+</p>
+    <div class="row">
+        <div class="column third">
+            <img src="assets/meicircle2.png" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assets/lichtman.jpg" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assets/danielwitvliet.png" width="80%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p> A baby brain </p> 
+        <video loop controls='true' width='50%' height='50%' src="assets/wormconnectomemovie.mp4" data-autoplay></video>
+    <p > <small> Witvliet et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Brains get bigger <br>
+        Topology stays the same 
+    </p> 
+        <img src="assets/Wit1.png" width="80%">
+    <p > <small> Witvliet et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> More synapses, more connections </p> 
+        <img src="assets/Wit3a.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Stable, developmentally dynamics, <br>
+        and variable connectivity </p> 
+        <img src="assets/Wit3b.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Hard-wired central processor, <br>
+        ( <span style="color:red"> learned? </span> ) plasticity everywhere else </p> 
+        <img src="assets/Wit4.png" width="80%">
+</section>
+
+<section data-background="#000000">
+    <p> Mating in swimming worms </p> 
+        <video loop controls='true' width='50%' height='50%' src="assets/swimmingmating.mp4" data-autoplay></video>
+    <p > <small> Susoy et al. (unpublished) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Spiral mating </p> 
+        <img src="assets/snakemating.jpg" width="70%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Parallel mating in Flatland,<br> Spiral mating in Spaceland </p> 
+        <img src="assets/spiralmatingc.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Mating in swimming worms </p> 
+        <img src="assets/experiencedependentplasticityc.png" width="30%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Critical period </p> 
+        <img src="assets/criticalperiodc-0.png" width="40%">
+</section>
+
+<section data-background="#000000">
+    <p> Fast electron microscopy</p>
+    <div class="row">
+        <div class="column third">
+            <img src="assets/yaron.jpeg" width="60%">
+            <p style="font-size:50%;">Yaron Meirovitch <br />  Harvard </p>
+        </div>
+        <div class="column third">
+            <img src="assets/lichtman.jpg" width="60%">
+            <p style="font-size:50%;">Jeff Lichtman <br /> Harvard </p>
+        </div>
+        <div class="column third">
+            <img src="assets/shavit.jpg" width="60%">
+            <p style="font-size:50%;">Nir Shavit  <br /> MIT </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column third">
+            <img src=" assets/Thermofisher.png " width="100%">
+        </div>
+        <div class="column third">
+            <p style="font-size:50%;"> Remco Schoenmakers </p>
+            <p style="font-size:50%;"> Pavel Potocek </p>
+            <p style="font-size:50%;"> Maurice Peemen </p>
+        </div>
+        <div class="column third">
+            <p style="font-size:50%;"> Core Park, Harvard </p>
+            <p style="font-size:50%;"> Lu Mi, Harvard </p>
+            <p style="font-size:50%;"> Richard Schalek, Harvard </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <p>Scanning Electron Microscopes</p>
+    <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+        <p style="font-size:20px">
+            1 cubic millimeter <br>
+            &#8595;<br> 
+            4 nm &#215; 4 nm &#215; 30 nm per voxel 
+            &#8595;<br> 
+            2,000,000,000,000,000 pixels
+        </p>
+    </div>
+    <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+        <img src=" assets/SinglebeamSEM.png " height="300px">
+        <p style="font-size:20px">
+            1 &#181;s / pixel<br>
+            &#8595;<br> 
+            60 years 
+        </p>
+    </div>
+    <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+        <img src=" assets/MultibeamSEM.png " height="300px"> 
+        <p style="font-size:20px">
+            61 beams<br> 
+            &#8595;<br> 
+            1 year 
+        </p>
+    </div>
+</section>
+
+
+<!-- Super resolution-->
+
+    <section data-auto-animate data-background="#000000">
+        <p> 
+           Important information is sparse 
+        </p>
+            <div data-id="cover"> 
+                <img src=" assets/BerghiaRaw.png " width="50%"> 
+            </div>
+        <p data-id="berghiacaption" style="font-size:25px">
+          <i style="font-style: italic !important"> Berghia stephanieae </i> <br> 
+          10% of pixels are membranes
+        </p>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p> 
+           Important information is sparse 
+        </p>
+            <div data-id="cover"> 
+                <img src=" assets/Berghiamembranes.png " width="50%"> 
+            </div>
+        <p data-id="berghiacaption" style="font-size:25px">
+          Negligible overhead <br> to dwell on important pixels <br>
+        </p>
+    </section>
+
+<!-- Segmentation Tests-->
+
+    <section data-background="#000000">
+        <p data-id="title"> 
+           Segmentation of high-speed images (0.1 &#181;s/pixel)
+        </p>
+            <div data-id="leftimage" style="position: absolute; top: 100px; left: 5%; width: 40%;">
+                <img src=" assets/lowqualityinitialscan.png " width=100%>
+            </div>
+            <div data-id="rightimage" style="position: absolute; top: 100px; left: 55%; width: 40%;">
+                <img src=" assets/lowqualitysegmentation.png " width=90%>
+            </div>
+    </section>
+    
+    <section data-background="#000000">
+        <p data-id="title"> 
+           Segmentation of low-speed images (3 &#181;s/pixel)
+        </p>
+            <div data-id="leftimage" style="position: absolute; top: 100px; left: 5%; width: 40%;">
+                <img src=" assets/highqualityinitialscan.png " width=100%>
+            </div>
+            <div data-id="rightimage" style="position: absolute; top: 100px; left: 55%; width: 40%;">
+                <img src=" assets/highqualitysegmentation.png " width=90%>
+            </div>
+    </section>
+    
+    <section data-background="#000000">
+        <p data-id="title"> 
+           Segmentation error in high-speed imaging
+        </p>
+            <div style="position: absolute; top: 100px; left: 3%; width: 27%;">
+                <img src=" assets/highqualitysegmentation.png " width=90%>
+                <p style="font-size:25px">
+                    Segmentation using <br>
+                    low-speed image </p>
+            </div>
+            <div style="position: absolute; top: 100px; left: 36%; width: 27%;">
+                <img src=" assets/lowqualitysegmentation.png " width=90%>
+                <p style="font-size:25px">
+                    Segmentation using <br>
+                    high-speed image </p>
+            </div>
+            <div style="position: absolute; top: 100px; left: 69%; width: 27%;">
+                <img src=" assets/incorrectprocesses.png " width=90%>
+                <p style="font-size:25px">
+                    Difference </p>
+            </div>
+    </section>
+
+<section data-background="#000000">
+    <p data-id="titlethree"> 
+       Learning-guided microscopy pipeline 
+    </p>
+        <div data-id="alphatwo" style="position: absolute; top: 100px; left: 3%; width: 27%;">
+            <img src=" assets/acquirerescan.png " width=100%>
+            <p style="font-size:25px">
+                Rescan </p>
+        </div>
+        <div data-id="betaone" style="position: absolute; top: 100px; left: 36%; width: 27%;">
+            <img src=" assets/lowqualityinitialscan.png " width=100%>
+            <p style="font-size:25px">
+                Embed in initial scan</p>
+        </div>
+        <div data-id="gammaone" style="position: absolute; top: 100px; left: 69%; width: 27%;">
+            <img src=" assets/reconstructedimage.png " width=100%>
+            <p style="font-size:25px">
+                Reconstructed image </p>
+        </div>
+</section>
+<!-- Final One Results  -->
+
+<section>
+    <section data-auto-animate data-background="#000000">
+            <p data-id="titlefinal"> 
+              Results of learning-guided electron microscopy 
+            </p>
+    
+            <div data-id="finalone" style="position: absolute; top: 80px; left: 2%; width: 21%;">
+                <p style="font-size:15px">
+                        Low speed <br> (3 &#181;s &#215; 100%)</p>
+                <img src=" assets/highqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finaltwo" style="position: absolute; top: 380px; left: 2%; width: 21%;">
+                <img src=" assets/finalslow.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running slow <br> (1&#215;)</p>
+            </div>
+    
+    </section>
+
+<!-- Final Two Results  -->
+
+    <section data-auto-animate data-background="#000000">
+            <p data-id="titlefinal"> 
+              Results of learning-guided electron microscopy 
+            </p>
+    
+            <div data-id="finalone" style="position: absolute; top: 80px; left: 2%; width: 21%;">
+                <p style="font-size:15px">
+                        Low speed <br> (3 &#181;s &#215; 100%)</p>
+                <img src=" assets/highqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finaltwo" style="position: absolute; top: 380px; left: 2%; width: 21%;">
+                <img src=" assets/finalslow.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running slow <br> (1&#215;)</p>
+            </div>
+    
+            <div data-id="finalthree" style="position: absolute; top: 80px; left: 27%; width: 21%;">
+                <p style="font-size:15px">
+                        High-speed 30&#215; <br> (0.1 &#181;s &#215; 100%)</p>
+                <img src=" assets/lowqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finalfour" style="position: absolute; top: 380px; left: 27%; width: 21%;">
+                <img src=" assets/final30xfast.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running fast <br> (30&#215;)</p>
+            </div>
+    
+    
+    </section>
+
+<!-- Final Three Results  -->
+
+    <section data-auto-animate data-background="#000000">
+            <p data-id="titlefinal"> 
+              Results of learning-guided electron microscopy 
+            </p>
+    
+            <div data-id="finalone" style="position: absolute; top: 80px; left: 2%; width: 21%;">
+                <p style="font-size:15px">
+                        Low speed <br> (3 &#181;s &#215; 100%)</p>
+                <img src=" assets/highqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finaltwo" style="position: absolute; top: 380px; left: 2%; width: 21%;">
+                <img src=" assets/finalslow.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running slow <br> (1&#215;)</p>
+            </div>
+    
+            <div data-id="finalthree" style="position: absolute; top: 80px; left: 27%; width: 21%;">
+                <p style="font-size:15px">
+                        High-speed 30&#215; <br> (0.1 &#181;s &#215; 100%)</p>
+                <img src=" assets/lowqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finalfour" style="position: absolute; top: 380px; left: 27%; width: 21%;">
+                <img src=" assets/final30xfast.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running fast <br> (30&#215;)</p>
+            </div>
+    
+            <div data-id="finalfive" style="position: absolute; top: 80px; left: 52%; width: 21%;">
+                <p style="font-size:15px; color:#FFFF00">
+                        Reconstructed 10&#215; <br> (0.1 &#181;s&#215;100% + 3 &#181;s&#215;10%)</p>
+                <img src=" assets/reconstructedimage.png " width=100%>
+            </div>
+    
+            <div data-id="finalsix" style="position: absolute; top: 380px; left: 52%; width: 21%;">
+                <img src=" assets/finallearning.png " width=90%>
+                <p style="font-size:15px; color:#FFFF00">
+                        Learning-guided microscope <br> running fast <br> (10&#215;)</p>
+            </div>
+    
+    </section>
+
+<!-- Final Four Results  -->
+
+    <section data-auto-animate data-background="#000000">
+            <p data-id="titlefinal"> 
+              Results of learning-guided electron microscopy 
+            </p>
+    
+            <div data-id="finalone" style="position: absolute; top: 80px; left: 2%; width: 21%;">
+                <p style="font-size:15px">
+                        Low speed <br> (3 &#181;s &#215; 100%)</p>
+                <img src=" assets/highqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finaltwo" style="position: absolute; top: 380px; left: 2%; width: 21%;">
+                <img src=" assets/finalslow.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running slow <br> (1&#215;)</p>
+            </div>
+    
+            <div data-id="finalthree" style="position: absolute; top: 80px; left: 27%; width: 21%;">
+                <p style="font-size:15px">
+                        High-speed 30&#215; <br> (0.1 &#181;s &#215; 100%)</p>
+                <img src=" assets/lowqualityinitialscan.png " width=100%>
+            </div>
+    
+            <div data-id="finalfour" style="position: absolute; top: 380px; left: 27%; width: 21%;">
+                <img src=" assets/final30xfast.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running fast <br> (30&#215;)</p>
+            </div>
+    
+            <div data-id="finalfive" style="position: absolute; top: 80px; left: 52%; width: 21%;">
+                <p style="font-size:15px; color:#FFFF00">
+                        Reconstructed 10&#215; <br> (0.1 &#181;s&#215;100% + 3 &#181;s&#215;10%)</p>
+                <img src=" assets/reconstructedimage.png " width=100%>
+            </div>
+    
+            <div data-id="finalsix" style="position: absolute; top: 380px; left: 52%; width: 21%;">
+                <img src=" assets/finallearning.png " width=90%>
+                <p style="font-size:15px; color:#FFFF00">
+                        Learning-guided microscope <br> running fast <br> (10&#215;)</p>
+            </div>
+    
+            <div data-id="finalseven" style="position: absolute; top: 80px; left: 77%; width: 21%;">
+                <p style="font-size:15px">
+                        High-speed 10&#215; <br> (0.3 &#181;s &#215; 100%)</p>
+                <img src=" assets/lowquality10x.png " width=100%>
+            </div>
+    
+            <div data-id="finaleight" style="position: absolute; top: 380px; left: 77%; width: 21%;">
+                <img src=" assets/final10xfast.png " width=90%>
+                <p style="font-size:15px">
+                        Slow microscope <br> running fast <br> (10&#215;)</p>
+            </div>
+    </section>
+</section>
+
+<section data-background="#000000">
+    <p> Faster brain-imaging<br>
+        Core, Vlad, and Sahand </p>
+    <div class="row">
+        <div class="column third">
+            <img src="assets/CorePark.png" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assets/vlad.png" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assets/Sahand.png" width="80%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p > All-manual annotation is <i style="font-style: italic !important"> slow </i> </p>
+        <video loop controls='true' width='80%' height='80%' src="assets/brainmating2x.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Augmenting training data for machine learning</p> 
+        <img src="assets/Park1.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Augmenting training data for machine learning</p> 
+        <img src="assets/Park2.png" width="80%">
+</section>
+
+<section>
+    <p>Motivation</p>
+    <p> <img src=" assets/BergLeeuwenhoek.png "> </p>
+    <p align="left"> <small> <em> "Is any of this knowledge practical? The reading of the external environment by cells of all types, leading to responses in growth or motility, is fundamental to life. Bacterial chemotaxis provides a model for learning how such processes can work. However this is not what has motivated me. I have wanted to know, simply, how such a tiny creature does its thing. How, for example, has it solved the problem of finding greener pastures within the constraints imposed by physics? This is a matter of curiosity. Curiosity is the driving force of basic science." </em> </small> </p>
+    <p align="right"> <small> -Howard Berg </small> </p>
+</section>
+
+<!-- Acknowledgments  -->
+
+<section>
+    <p> Acknowledments </p>
+    <div class="row">
+        <div class="column third">
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Samuel Lab  </span> </b> <br>
+                Vlad Susoy<br>
+                Core Park<br>
+                David Zimmerman<br>
+                Helena Casademunt<br>
+                Stan Lazopulo<br>
+                Alina Vrabiou<br>
+                Gabriel Hosu<br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Zhen Lab  </span> </b> <br>
+                Daniel Witvliet<br>
+                Ben Mulcahy<br>
+                Min Wu<br>
+                Wesley Hung<br>
+            </p>
+        </div>
+        <div class="column third">
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Lichtman Lab  </span> </b> <br>
+                Richard Schalek<br>
+                Yaron Meirovitch<br>
+                Yuelong Wu<br>
+                Daniel Berger<br><br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Shavit Lab  </span> </b> <br>
+                Lu Mi<br>
+            </p>
+        </div>
+        <div class="column third">
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Alumni  </span> </b> <br>
+                Prof. Damon Clark, Yale<br>
+                Prof. Andrew Leifer, Princeton<br>
+                Prof. Vivek Venkatachalam, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; Northeastern Univ<br>
+                Prof. Sahand Jamal, EPFL<br>
+                Prof. Quan Wen, USTC<br>
+                Prof. Guangwei Si, Beijing<br>
+                Prof. Ni Ji, Beijing<br>
+                Dr. Albert Lin, Princeton<br>
+                Dr. James Mitchell, Harvard<br>
+            </p>
+        </div>
+    </div>
+</section>
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
