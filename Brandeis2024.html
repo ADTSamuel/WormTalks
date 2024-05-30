@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- URL Slide -->
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/Samuel_at_Brandeis_2024 </p>
+        <p> <img src="assetsBrandeis/QRcode.png" width="40%"> </p>
+</section>
+
+<!-- Title Slide -->
+
+<section data-background="#000000">
+    <h3>Big data for small brains </h3>
+        <p>
+            <small>Aravi Samuel</small>
+        </p>
+                                        
+        <p> <img src=" assetsBrandeis/howardaravi.jpg " width="60%"> </p>
+        <p>
+            <small>Howard Berg </small>
+        </p>
+</section>
+
+<!-- Bacteria swimming  -->
+<section>
+<section data-background="#000000">
+        <p> <em> E. coli </em>, simple movements </p>
+        <video loop controls='true' width='60%' height='60%' src=" assetsBrandeis/fluoflagella.mp4 " data-autoplay></video>
+</section>
+
+<section data-background="#E3E3E3">
+    <p> Tracking a cell </p>
+        <p> <img src="assetsBrandeis/trackingberg.png" width="45%"> </p>
+</section>
+
+<section data-background="#000000">
+    <p> Tracking a cell </p>
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/trackingbacteria.mp4" data-autoplay></video>
+    <p > <small> Turner et al. (2016) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Small circuit </p>
+        <img src="assetsBrandeis/Alon1.png" width="40%">
+    <p > <small> Alon et al. (1999) </small></p>
+</section>
+</section>
+
+<!-- Introduction to worms -->
+<section>
+<section>
+    <p> Another small brain? </p> 
+</section>
+<section>
+    <p> <em> C. elegans </em>, simple movements </p>
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/crawlingworms.mp4" data-autoplay></video>
+</section>
+
+<section>
+    <p> Small brain </p>
+        <img src="assetsBrandeis/chklovskiiconnectomeborder.png" width="70%">
+    <p > <small> <span style="color:red"> Sensory neurons </span>, <span style="color:blue"> Interneurons </span>, <span style="color:green"> Motor neurons </span> </small></p>
+    <p > <small> Varshney et al. (2011) </small></p>
+</section>
+
+<section>
+    <p> Thermotaxis </p> 
+        <img src="assetsRafael/HedgecockRussell.png" width="80%">
+    <p > <small> Hedgecock and Russell (1975) </small></p>
+</section>
+
+<section>
+    <p> Thermotaxis </p> 
+        <video loop controls='true' width='50%' height='50%' src="assetsBrandeis/isothermal.mp4" data-autoplay></video>
+    <p > <small> Ryu and Samuel (2003) </small></p>
+</section>
+
+<section>
+    <p> Some known neurons </p> 
+        <img src="assetsBrandeis/morioshima.png" width="40%">
+    <p > <small> Mori and Oshima (1995) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Tracking a neuron (AFD) </p>
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/outclark2b.mp4" data-autoplay></video>
+    <p > <small> Clark et al. (2007) </small></p>
+</section>
+
+<section data-auto-animate>
+    <p> <data-id="replace" span style="color:yellow"> What did we learn? </span> </p> 
+</section>
+<section data-auto-animate>
+    <p data-id="replace" > Worms aren't bacteria </p>
+</section>
+<section data-auto-animate>
+    <p data-id="replace" > Worms aren't bacteria </p>
+    <p data-id="longstory"> <em> One cell can't explain behavior </em> </p> 
+</section>
+
+</section>
+
+<section>
+<section data-background="#000000">
+        <img src="assetsBrandeis/streetlighteffect.jpeg" width="80%">
+        <p align="left" style="font-size:26px">  “Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that’s where the light is.” </p>
+        <p align="right" style="font-size:26px">  <i style="font-style: italic !important"> - Noam Chomsky </i> </p>
+</section>
+
+<section>
+    <p> We needed a bigger lamppost </p>
+</section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> A bigger lamppost </p>
+        <video loop controls='true' width='60%' height='60%' src=" assetsBrandeis/wholebrainimagingfish.mp4 " data-autoplay></video>
+    <p > <small> Ahrens et al. (2013) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> A bigger lamppost for <em> C. elegans  </em> </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsBrandeis/meicircle2.png" width="50%">
+            <img src="assetsBrandeis/vivek.png" width="50%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsBrandeis/vlad.png" width="55%">
+        </div>
+    </div>
+    <p > <small> Mei Zhen, Vivek Venkatachalam, Vlad Susoy </small></p>
+</section>
+
+<section data-background="#D3D3D3">
+    <p> Tracking every neuron </p>
+        <img src="assetsBrandeis/trackingmicroscope.png" width="30%">
+    <p > <small> Nguyen et al. (2016), Venkatachalam et al. (2016) </small> <a href="https://doi.org/10.1073/pnas.1507109113"> <small> Link to paper </small> </a> </p>
+</section>
+
+<section data-background="#000000">
+    <p> Tracking every neuron </p>
+        <video loop controls='true' width='60%' height='60%' src="assetsBrandeis/Venkatachalammovieonecropped.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> Tracking every neuron </p>
+        <video loop controls='true' width='60%' height='60%' src="assetsBrandeis/Venkatachalammovietwo.mp4" data-autoplay></video>
+</section>
+
+<section>
+    <p> Low-dimensional behavior &#8594 Low-dimensional brain </p>
+            <img src="assetsBrandeis/hierarchicalclustering.png" width="100%">
+</section>
+</section>
+
+<section>
+<section>
+    <p> Natural behavior is usually high-dimensional </p> 
+</section>
+
+<section data-background="#000000">
+    <p> A natural behavior </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/matingraw.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> One behavior, many sub-behaviors </p> 
+        <img src="assetsBrandeis/naturalistic.png" width="70%">
+</section>
+
+<section data-background="#000000">
+    <p> Anterior brain with many purposes <br>
+        Posterior brain with one purpose </p> 
+        <img src="assetsBrandeis/fluorescentnervoussystem.png" width="80%">
+        <p align="center" style="font-size:25px">  
+            Anterior $\sim$ 200 neurons &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Posterior $\sim$ 100 neurons        
+        </p>
+</section>
+
+<section>
+    <p style="font-size:30px"> The posterior brain is a high-dimensional sensory machine </p> 
+        <img src="assetsBrandeis/phasmidpic.png" width="30%">
+</section>
+
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> Measuring brain and behavior </p> 
+        <video loop controls='true' width='80%' height='80%' src="assetsBrandeis/brainmating2x.mp4" data-autoplay></video>
+        <p style="font-size:25px">
+          <span style="color:green"> GCaMP6  </span> 
+          <span style="color:red"> Neptune  </span> 
+          <span style="color:gray"> mCherry  </span> 
+        </p>
+    <p > <small> Susoy et al. (2021) </small> <a href="https://doi.org/10.1016/j.cell.2021.08.024"> <small> Link to paper </small> </a> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Measuring brain and behavior </p> 
+        <img src="assetsBrandeis/brainbehaviormating.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assetsBrandeis/behaviorsequences.png" width="70%">
+        <p align="center" style="font-size:25px">  
+        Every mating is the same<br><br>
+        Every mating is different
+        </p>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Natural behavior is high-dimensional </p> 
+        <img src="assetsBrandeis/fullcorrelationmatrix.png" width="50%">
+        <img src="assetsBrandeis/fullcorrelationmatrixkey.png" width="70%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Most neurons contribute <br>
+        to multiple sub-behaviors </p> 
+        <img src="assetsBrandeis/Linkclustering.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> A different combinatorial activity pattern <br>
+        for every sub-behavior </p> 
+        <img src="assetsBrandeis/Differentcorrelations.png" width="90%">
+</section>
+</section>
+
+<section>
+<section>
+    <p> High-dimensional sensory input <br> <em> but low-dimensional motor output   </em> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Different sub-behaviors, <br> same muscles </p> 
+        <img src="assetsBrandeis/Musclesbehaviors.png" width="70%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Context-dependent sensory perception  <br> diversifies brain activity </p> 
+        <img src="assetsBrandeis/decision-making.png" width="70%">
+</section>
+
+<section data-background="#000000">
+    <p> PVV activity as the worm turns </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/PVVshort.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> PVV ablation </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsBrandeis/PVVablated.mp4" data-autoplay></video>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Predicting behavior from brain activity </p> 
+        <img src="assetsBrandeis/linearmodels.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Trained neural networks <br> predict behavior from brain activity </p> 
+        <img src="assetsBrandeis/linearmodelswork.png" width="60%">
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Diverse brain-wide activity patterns <br> from diverse sensory contexts </p> 
+        <img src="assetsBrandeis/circuit_summary.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Wiring alone doesn't predict function </p> 
+        <img src="assetsBrandeis/chemicalsynapsesalone.png" width="40%">
+</section>
+
+<section data-auto-animate>
+    <p> To understand the connectome, <br> <em> study more connectomes  </em> </p> 
+</section>
+<section data-auto-animate>
+    <p> To understand the connectome, <br> <em> study more connectomes  </em> </p> 
+    <p data-id="connectomelampost" > <span style="color:yellow"> We needed another lamppost </span> </p> 
+</section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> Worm connectomics<br> Daniel, Jeff, Mei, and many others 
+</p>
+    <div class="row">
+        <div class="column third">
+            <img src="assetsBrandeis/meicircle2.png" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assetsBrandeis/lichtman.jpg" width="80%">
+        </div>
+        <div class="column third">
+            <img src="assetsBrandeis/danielwitvliet.png" width="80%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p> A baby brain </p> 
+        <video loop controls='true' width='50%' height='50%' src="assetsBrandeis/wormconnectomemovie.mp4" data-autoplay></video>
+    <p > <small> Witvliet et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Brains get bigger <br>
+        Topology stays the same 
+    </p> 
+        <img src="assetsBrandeis/Wit1.png" width="80%">
+    <p > <small> Witvliet et al. (2021) </small> <a href="https://doi.org/10.1038/s41586-021-03778-8"> <small> Link to paper </small> </a> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> More synapses, more connections </p> 
+        <img src="assetsBrandeis/Wit3a.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Stable, developmentally dynamics, <br>
+        and variable connectivity </p> 
+        <img src="assetsBrandeis/Wit3b.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Hard-wired central processor, <br>
+        <em> <span style="color:#C41E3A"> plasticity </span> everywhere else  </em> </p> 
+        <img src="assetsBrandeis/Wit4.png" width="80%">
+</section>
+</section>
+
+
+<section>
+<section>
+    <p> Connectomics needed to be faster </p> 
+</section>
+
+<section>
+    <p> Fast electron microscopy<br>
+        Yaron, Core, et al </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsBrandeis/yaron.jpeg" width="60%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsBrandeis/CorePark.png" width="60%">
+        </div>
+    </div>
+</section>
+
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p data-id="pricepoint" style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p data-id="pricepoint" style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 550px; left: 36%; width: 27%; height: 600px;">
+            <p data-id="fasttext" style="font-size:20px">
+                <span style="color:orange"> 25 ns / pixel </span> <br>
+                <span style="color:orange"> &#8595; </span> <br> 
+                <span style="color:orange"> 1.5 years  </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+</section>
+
+<section>
+    <section data-background="#000000">
+        <p> Fast, noisy images &#8594 lower segmentation quality </p> 
+            <img src="assetsBrandeis/fastnoisyerror.png" width="80%">
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsBrandeis/image7A.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsBrandeis/image7B.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsBrandeis/image7C.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsBrandeis/image7D.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsBrandeis/image7.png" width="100%">
+    </section>
+</section>
+
+<section>
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p> Long dwell times fix errors </p> 
+        </div>
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+            <p> Long dwell times fix errors </p> 
+            <p data-id="noteverywhere" > <span style="color:yellow"> but not everywhere... </span> </p> 
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> Segmentation accuracy varies spatially </p> 
+            <img src="assetsBrandeis/hardtosegment.png" width="80%">
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> Segmentation accuracy varies spatially </p> 
+            <img src="assetsBrandeis/hardtosegment.png" width="80%">
+        <p data-id="predictably" > <span style="color:yellow"> but also varies predictably  </span> </p> 
+        </div>
+    </section>
+</section>
+
+<section>
+<section data-background="#000000">
+        <p> <span style="color:yellow"> The idea in a &#x1F95C; </span> </p> 
+        <p> Use ultrafast imaging everywhere </p> 
+        <p> Add slow imaging only where errors might occur </p> 
+</section>
+
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> We built an ML-trained "error network" </span> </p> 
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> We built an ML-trained "error network" </span> </p> 
+        <p data-id="errornetwork"> Trained with images containing segmentation errors <br>
+            <span style="color:red"> Error network  </span> predicts error prone regions </p> 
+        <img data-id="errornetwork" src="assetsBrandeis/errnetworkblack.png" width="80%">
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        </div>
+    </section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        <img data-id="rescan" src="assetsBrandeis/rescanoutput.png" width="80%">
+        <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
+        </div>
+    </section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        <img data-id="rescan" src="assetsBrandeis/rescanoutput.png" width="80%">
+        <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
+        <p data-id="rescan2" style="font-size:30px"> Rescans and fast scans are fused </p>
+        </div>
+    </section>
+</section>
+
+<section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Start with samples on wafer </span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineHn.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Put in Verios SEM </span> </p> 
+                <img data-id="pipeline" src="assetsBrandeis/pipelineGn.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Initial fast scan (25ns pixel dwell time) (SEM PC)</span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineF.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Compute membranes and segmentation (support PC)</span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineE.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Identify error prone regions (support PC) </span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineD.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Compute rescan masks (SEM PC) </span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineB.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Rescan (support  PC) </span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipelineA.png" width="90%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p data-id="pipelinetext" style="font-size:25px"> <span style="color:yellow"> Create hybrid images (post-processing) </span> </p> 
+            <img data-id="pipeline" src="assetsBrandeis/pipeline.png" width="90%">
+        </div>
+</section>
+</section>
+
+<section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px" > How fast is SmartEM when image quality is the same as traditional EM? </p>
+        <div class="row">
+            <div class="column right">
+
+                <p align="left" style="font-size:20px">  
+                    <span style="color:yellow"> Smart pixel time, $ t_{smart}$  </span> <br>
+                    \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
+                </p>
+
+                <p align="right" style="font-size:18px">  
+                    $ \alpha$.... rescan rate <br>
+                    $ t_{initial}$.... initial dwell time <br>
+                    $ t_{rescan}$.... rescan dwell time <br>
+                </p>
+
+            </div>
+            <div class="column middle">
+                <p align="left" style="font-size:20px">  
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                </p>
+            </div>
+            <div class="column left">
+            </div>
+        </div>
+        </div>
+    </section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px" > How fast is SmartEM when image quality is the same as traditional EM? </p>
+        <div class="row">
+            <div class="column right">
+
+                <p align="left" style="font-size:20px">  
+                    <span style="color:yellow"> Smart pixel time, $ t_{smart}$  </span> <br>
+                    \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
+                </p>
+
+                <p align="right" style="font-size:18px">  
+                    $ \alpha$.... rescan rate <br>
+                    $ t_{initial}$.... initial dwell time <br>
+                    $ t_{rescan}$.... rescan dwell time <br>
+                </p>
+
+            </div>
+            <div class="column middle">
+                <p align="left" style="font-size:20px">  
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                </p>
+            </div>
+            <div class="column left">
+
+            <p data-id="comparisontext" align="center" style="font-size:25px">  
+            With image quality of traditional 1000 ns dwell time, <br>
+            <span style="color:orange"> <em> smart pixel times are 7-fold shorter   </em> </span> 
+            </p>
+            <img data-id="comparisonfigure" src="assetsBrandeis/sevenfold.png" width="80%">
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 550px; left: 36%; width: 27%; height: 600px;">
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsBrandeis/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+        <div style="position: absolute; top: 570px; left: 0%; width: 100%;height: 600px;">
+            <p > <small> Meirovitch et al. (2024) </small>
+            <a href="https://www.biorxiv.org/content/10.1101/2023.10.05.561103v1"> 
+            <small> Link to Biorxiv </small> </a></p>
+        </div>
+    </section>
+</section>
+
+<!-- Core Fast -->
+
+<section>
+
+<section>
+    <p> Fast analysis for whole-brain imaging<br>
+        Core, Sahand, et al </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsBrandeis/CorePark.png" width="60%">
+    <p > <small> Park et al. (2024) </small> <a href="https://www.nature.com/articles/s41592-023-02096-3"> <small> Link to paper </small> </a></p>
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsBrandeis/Sahand.png" width="60%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p > All-manual analysis is <i style="font-style: italic !important"> slow </i> </p>
+        <video loop controls='true' width='80%' height='80%' src="assetsBrandeis/brainmating2x.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Augmenting training data for machine learning</p> 
+        <img src="assetsBrandeis/Park1.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Augmenting training data for machine learning</p> 
+        <img src="assetsBrandeis/Park2.png" width="80%">
+</section>
+</section>
+
+<!-- Mating -->
+
+<section>
+<section>
+    <p> There are more things in <em> brain  </em> and <em> behavior  </em> <br>
+    than are dreamt of <em> by neuroscientists. </em> 
+ </p> 
+</section>
+
+<section data-background="#000000">
+    <p> Swimming worms </p> 
+        <video loop controls='true' width='50%' height='50%' src="assetsBrandeis/swimmingmating.mp4" data-autoplay></video>
+    <p > <small> Susoy et al. (2023) </small> <a href="https://doi.org/10.1016/j.cub.2023.09.003"> <small> Link to paper </small> </a>
+</p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Spiral behavior </p> 
+        <img src="assetsBrandeis/snakemating.jpg" width="70%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Parallel mating in Flatland,<br> Spiral mating in Spaceland </p> 
+        <img src="assetsBrandeis/spiralmatingc.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Mating in swimming worms </p> 
+        <img src="assetsBrandeis/experiencedependentplasticityc.png" width="30%">
+        <p align="center" style="font-size:25px">  
+            Critical period during L4 stage 
+        </p>
+</section>
+</section>
+
+<!-- Acknowledgments  -->
+
+<section>
+    <p> Acknowledments </p>
+    <div class="row">
+        <div class="column third">
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Samuel Lab  </span> </b> <br>
+                <b> <span style="color:orange"> Team Worm  </span> </b> <br>
+                Core Park<br>
+                Ishaan Chandok<br>
+                Helena Casademunt<br><br>
+                <b> <span style="color:orange"> Team Fly  </span> </b> <br>
+                David Zimmerman<br>
+                Dr. Stan Lazopulo<br><br>
+                <b> <span style="color:orange"> Team Bacteria  </span> </b> <br>
+                Dr. Alina Vrabiou<br>
+                Dr. Gabriel Hosu<br>
+            </p>
+        </div>
+        <div class="column third">
+            <p align="left" style="font-size:25px">  <br>
+                <b> <span style="color:orange"> Team undergrad  </span> </b> <br>
+                Rafael Jacobsen<br>
+                William Fredenberg <br>
+                João van der Ven<br>
+                Sophia Kim<br>
+                Dominic Lehane <br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Sternberg Lab  </span> </b> <br>
+                Dr. Olivia Wan <br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Shavit Lab  </span> </b> <br>
+            </p>
+        </div>
+        <div class="column third">
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Zhen Lab  </span> </b> <br>
+                Dr. Daniel Witvliet<br>
+                Dr. Ben Mulcahy<br>
+                Min Wu<br>
+                Dr. Wesley Hung<br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Lichtman Lab  </span> </b> <br>
+                Dr. Yaron Meirovitch<br>
+            </p>
+            <p align="left" style="font-size:25px">  
+                <b> <span style="color:yellow"> Past Lab Members  </span> </b> <br>
+                Prof. Damon Clark, Yale<br>
+                Prof. Andrew Leifer, Princeton<br>
+                Prof. Vivek Venkatachalam, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; Northeastern Univ<br>
+                Prof. Sahand Jamal, EPFL<br>
+            </p>
+        </div>
+    </div>
+</section>
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
