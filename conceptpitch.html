@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+.img-caption {
+    font-size: 0.6em;   /* try 0.5em–0.7em */
+    margin-top: 0.5em;
+    color: #555;
+}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- URL Slide -->
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/NSFBSF </p>
+</section>
+
+<!-- Title Slide -->
+
+
+<!-- Title Slide  -->
+
+<section>
+    <p> NSF-BSF Collaboration  </p> 
+    <p style="color:yellow" style="font-size:30px"> Closed-loop neural circuit dynamics in <em> C. elegans </em> </p> 
+    <p style="font-size:25px" style="color:white"> Aravi Samuel, 
+<em> Harvard </em> 
+&
+Alon Zaslaver, 
+<em> Hebrew University </em> 
+</p>  
+        <img src="assets/elegans.jpeg" width="30%">
+</section>
+
+<section data-background="#000000">
+        <video loop controls='true' width='40%' height='40%' src="assets/wormconnectomemovie.mp4" data-autoplay></video>
+    <p align="left" style="font-size:30px"> How does a complete nervous system transform distributed olfactory input into adaptive navigation?  </p> 
+    <p align="left" style="font-size:30px"> How is the connectome linked to population dynamics in the context of closed-loop integration between sensory coding and motor feedback?  </p> 
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Samuel and Zaslaver labs: <br>
+Multi-neuronal representations of diverse odors </p>
+        <img src="assets/file2.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p style="font-size:30px"> Samuel lab: <br>
+brain-wide calcium imaging of freely-navigating animals  </p>
+        <img src="assets/ARafael.png" width="100%">
+</section>
+<section data-background="#FFFFFF">
+    <p style="font-size:30px"> Samuel lab: <br>
+brain-wide calcium imaging of freely-navigating animals  </p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/trackingmicroscope.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <video loop controls='true' width='80%' height='80%' src="assets/Venkatachalammovieone.mp4" data-autoplay></video>
+            <video loop controls='true' width='80%' height='80%' src="assets/Venkatachalammovietwo.mp4" data-autoplay></video>
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p style="font-size:30px"> Samuel lab: <br>
+brain-wide calcium imaging of freely-navigating animals  </p>
+        <img src="assets/freely_moving_immobilized_intersection_heatmap.png" width="80%">
+</section>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> Zaslaver lab: High-throughput multi-animal tracking </p>
+        <img src="assets/zaslaver.png" width="80%">
+        <div class="img-caption">Quantitative chemotaxis phenotyping across odor libraries; genetic perturbation; natural odor ecology; large-scale behavioral dataset generation</div>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> Complementary integration </p> 
+        <img src="assets/coll.png" width="60%">
+        <div class="img-caption">Iterative loop: behavior &#8594 neural dynamics &#8594  modeling &#8594  perturbation <br>
+True binational integration, reciprocal trainee exchange, and shared data pipelines
+</div>
+</section>
+
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
