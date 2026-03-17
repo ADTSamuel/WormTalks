@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 30%;
+    }
+    
+    .twothird {
+    width: 60%;
+    }
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- URL Slide -->
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/APS2026Samuel </p>
+</section>
+
+<!-- Title Slide -->
+
+
+<!-- Title Slide  -->
+
+<section data-background="#000000">
+    <h3>From bacterial to worm chemotaxis </h3>
+        <p>
+            <small>Aravi Samuel</small>
+        </p>
+                                        
+        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+</section>
+
+<section>
+
+
+<section data-background="#FFFFFF">
+    <div class="row">
+        <div class="column left">
+            <p> Simple behaviors </p>
+            <img src="assetsAPS/runtumble.png" width="70%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <p> Simple circuits </p>
+            <img src="assets/Alon1.png" width="100%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Worms </p> 
+    <div class="row">
+        <div class="column third">
+            <img src="assetsAPS/runpirouette.png" width="90%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column twothird">
+                <img src="assetsAPS/signalflow.png" width="100%">
+            <p > <small> Varshney et al. (2011) </small></p>
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p> A dynamical connectome </p> 
+        <video loop controls='true' width='50%' height='50%' src="assets/wormconnectomemovie.mp4" data-autoplay></video>
+    <p > <small> Witvliet et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Brains get bigger <br>
+        Topology stays the same 
+    </p> 
+        <img src="assets/Wit1.png" width="80%">
+    <p > <small> Witvliet et al. (2021) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> More synapses, more connections </p> 
+        <img src="assets/Wit3a.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Variable connectivity </p> 
+        <img src="assets/Wit3b.png" width="60%">
+</section>
+</section>
+
+<section>
+
+
+<section data-background="#FFFFFF">
+    <p> Odorant selective neurons </p> 
+        <img src="assetsAPS/corineurons.png" width="80%">
+    <p > <small> Bargmann and Horvitz (1993) </small></p>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> Many ORNs, many odors </p>
+        <img src="assetsHelena/AlbertMethodTop.png" width="80%">
+    <p > <small> Lin et al. (2023) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Many odor responses </p>
+        <img src="assetsHelena/AlbertMethodBottom.png" width="80%">
+    <p > <small> Lin et al. (2023) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Combinatorial Olfactory Codes? </p>
+        <img src="assetsHelena/AlbertBrainwide.jpg" width="60%">
+    <p > <small> Lin et al. (2023) </small></p>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Whole Brain Imaging </p>
+        <img src="assetsHelena/elenamethod.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Whole Brain Imaging </p>
+        <img src="assetsHelena/ClassicAnnotation.png" width="100%">
+</section>
+
+<section data-background="#000000">
+    <p> Whole Brain Imaging </p>
+        <img src="assetsAPS/Rafael.png" width="80%">
+    <p > <small> John Calarco, Mei Zhen </small></p>
+</section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p > Whole Brain Imaging </p>
+        <video loop controls='true' width='40%' height='40%' src="assetsHelena/output.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p > Freely-moving and immobilized worms</p>
+        <img src="assetsAPS/freely_moving_immobilized_intersection_heatmap.png" width="100%">
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Chemotaxis to diacetyl and IAA </p>
+        <img src="assetsHelena/DiacetylIAAchemotaxis.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Chemotaxis to diacetyl and IAA </p>
+        <img src="assetsHelena/Alltracks.png" width="80%">
+</section>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Two behavioral states </p> 
+        <img src="assetsAPS/doubleexponential.png" width="50%">
+    <p > <small> Chen et al. (2025) </small></p>
+</section>
+<section data-background="#FFFFFF">
+    <p> Run durations between and within pirouettes </p> 
+        <img src="assetsAPS/behavioralstatistics.png" width="80%">
+</section>
+<section data-background="#FFFFFF">
+    <p> How do worms maintain orientation </p> 
+        <img src="assetsAPS/anglehistograms.png" width="100%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Pirouettes correct orientation </p> 
+        <img src="assetsAPS/pirouettesimprove.png" width="60%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Runs wander </p> 
+        <img src="assetsAPS/runsrandomize.png" width="60%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Random number of turns within pirouette </p> 
+        <img src="assetsAPS/variableturnspirouette.png" width="60%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Each turn is a coin flip </p> 
+        <img src="assetsAPS/eachturnisacoinflip.png" width="60%">
+</section>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Brain-wide differences between <br>
+immobilized and moving worms </p> 
+        <img src="assetsAPS/correlationbrains1.png" width="80%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Focused differences between <br>
+chemotaxis and free navigation </p> 
+        <img src="assetsAPS/correlationbrains.png" width="80%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Different neuron-behavior correlations </p> 
+        <img src="assetsAPS/neuronbehavior.png" width="80%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Different neuron-behavior correlations </p> 
+    <div class="row">
+        <div class="column twothird">
+        <img src="assetsAPS/flipcorrelations.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column third">
+        <img src="assetsAPS/olqmap.png" width="100%">
+        <img src="assetsAPS/Bag.png" width="100%">
+        </div>
+    </div>
+</section>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> AWA senses concentration changes</p> 
+        <img src="assetsAPS/awaactivity.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Adaptive dynamical threshold of sensitivity </p> 
+        <img src="assetsAPS/awathreshold.png" width="80%">
+    <p > <small> Levy and Bargmann (2020) </small></p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> AIB is complicated </p> 
+    <div class="row">
+        <div class="column twothird">
+        <img src="assetsAPS/aibcomplicated.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column third">
+        <img src="assetsAPS/gordussnippet.png" width="100%">
+        </div>
+    </div>
+        <p align="center" style="font-size:25px">  
+            Ray and Gordus (2025)
+        </p>
+</section>
+</section>
+
+<!-- Acknowledgments  -->
+
+<section>
+    <p>Acknowledgments</p>
+        <div style="position: absolute; top: 60px; left: 0%; width: 60%;">
+            <p> <img src="assets/helena.jpeg"> </p> 
+            <p> <small> Helena Casademunt </small> </p> 
+        </div>
+
+            <div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+            <p align="left">  <small>
+                <span style="color:yellow"> Team fly </span> <br>
+                David Zimmerman<br>
+                Stan Lazopulo<br><br>
+                <span style="color:yellow"> Team worm </span> <br>
+                Helena Casademunt<br>
+                Ishaan Chandok<br><br>
+                <span style="color:yellow"> Team bacteria </span> <br>
+                Alina Vravioiu <br>
+                Gabriel Hosu<br><br><br>
+                <span style="color:yellow"> Team undergrad </span> <br>
+                Rafael Jacobsen<br>
+                Rahm Bharara<br><br><br>
+    </small> </p> 
+    </div>
+</section>
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
