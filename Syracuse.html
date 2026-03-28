@@ -1,25 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>APS 2026 Chemotaxis</title>
-    <meta
-      name="description"
-      content="APS 2026 Chemotaxis presentation by Aravi Samuel"
-    >
-    <meta name="author" content="Aravi Samuel">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="dist/reset.css">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
-    <link rel="stylesheet" href="plugin/highlight/monokai.css">
-    <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
-
-    <style>
-      *,
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   APS 2026 Chemotaxis
+  </title>
+  <meta content="Syracuse 2026 Chemotaxis presentation by Aravi Samuel" name="description"/>
+  <meta content="Aravi Samuel" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="dist/reset.css" rel="stylesheet"/>
+  <link href="dist/reveal.css" rel="stylesheet"/>
+  <link href="dist/theme/black.css" id="theme" rel="stylesheet"/>
+  <link href="plugin/highlight/monokai.css" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <style>
+   *,
       *::before,
       *::after {
         box-sizing: border-box;
@@ -86,6 +83,10 @@
         text-align: center;
       }
 
+      .text-right {
+        text-align: right;
+      }
+
       .tiny-text {
         font-size: 20px;
       }
@@ -148,345 +149,481 @@
       .highlight-name {
         color: yellow;
       }
-    </style>
-
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-  </head>
-
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <!-- URL slide -->
-        <section data-background="#000000">
-          <p class="url-slide">https://bit.ly/SamuelSyracuse2026</p>
-        </section>
-
-        <!-- Title slide -->
-        <section data-background="#000000">
-          <h3>Chemotaxis</h3>
-          <p><small>Aravi Samuel</small></p>
-          <p><img src="assets/howardaravi.jpg" class="w-60" alt="Aravi Samuel"></p>
-        </section>
-
-<section data-background="#000000">
-        <video loop controls='true' width='60%' height='60%' src=" assets/fluoflagella.mp4 " data-autoplay></video>
-        <p> <small> <em> E. coli </em> </small> </p>
-</section>
-
-<section data-background="#E3E3E3">
-    <p> Tracking cells </p>
-        <p> <img src="assets/trackingberg.png" width="45%"> </p>
-        <p> <small> If life is getting better, enjoy it more.<br> If life is getting worse, don't worry about it. </small></p>
-</section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <div class="row">
-              <div class="column left">
-                <p>Sensorimotor behavior</p>
-                <img src="assetsAPS/runtumble.png" class="w-70" alt="Run-and-tumble behavior">
-              </div>
-              <div class="column middle">
-                <p class="text-left tiny-text spacer" aria-hidden="true"></p>
-              </div>
-              <div class="column right">
-                <p>Sensorimotor circuit</p>
-                <img src="assets/Alon1.png" class="w-100" alt="Sensorimotor circuit diagram">
-              </div>
-            </div>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p><em>C. elegans</em></p>
-            <div class="row">
-              <div class="column third">
-                <img src="assetsAPS/runpirouette.png" class="w-90" alt="Run and pirouette behavior">
-              </div>
-              <div class="column middle">
-                <p class="text-left tiny-text spacer" aria-hidden="true"></p>
-              </div>
-              <div class="column twothird">
-                <img src="assetsAPS/signalflow.png" class="w-100" alt="Signal flow diagram">
-                <p><small>Varshney et al. (2011)</small></p>
-              </div>
-            </div>
-          </section>
-
-          <section data-background="#000000">
-            <p>A dynamical connectome</p>
-            <video
-              loop
-              controls
-              class="w-50"
-              src="assets/wormconnectomemovie.mp4"
-              data-autoplay
-            ></video>
-            <p><small>Witvliet et al. (2021)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>
-              Brains get bigger <br>
-              Topology stays the same
-            </p>
-            <img src="assets/Wit1.png" class="w-80" alt="Brain growth topology figure">
-            <p><small>Witvliet et al. (2021)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>More synapses, more connections</p>
-            <img src="assets/Wit3a.png" class="w-80" alt="Synapse and connection counts">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Variable connectivity</p>
-            <img src="assets/Wit3b.png" class="w-60" alt="Variable connectivity figure">
-          </section>
-        </section>
-
-<section data-background="#FFFFFF">
-    <p> Tracking cells </p>
-        <img src="assets/ClarkFig4.png" width="60%">
-    <p > <small> Clark et al. (2007) </small></p>
-</section>
-
-<section data-background="#000000">
-        <img src="assets/streetlighteffect.jpeg" width="80%">
-        <p align="left" style="font-size:26px">  “Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that’s where the light is.” </p>
-        <p align="right" style="font-size:26px">  <i style="font-style: italic !important"> - Noam Chomsky </i> </p>
-</section>
-
-<section data-background="#000000">
-    <p> Whole-brain imaging </p>
-        <video loop controls='true' width='60%' height='60%' src=" assets/wholebrainimagingfish.mp4 " data-autoplay></video>
-    <p > <small> Ahrens et al. (2013) </small></p>
-</section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>Many ORNs</p>
-            <img src="assetsAPS/corineurons.png" class="w-80" alt="Olfactory receptor neuron figure">
-            <p><small>Bargmann and Horvitz (1993)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Microfluidic manifolds</p>
-            <img src="assetsHelena/AlbertMethodTop.png" class="w-80" alt="Microfluidic manifold setup">
-            <p><small>Lin et al. (2023)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Manifold responses</p>
-            <img src="assetsHelena/AlbertMethodBottom.png" class="w-80" alt="Manifold response data">
-            <p><small>Lin et al. (2023)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Combinatorial codes?</p>
-            <img src="assetsHelena/AlbertBrainwide.jpg" class="w-60" alt="Brain-wide activity image">
-            <p><small>Lin et al. (2023)</small></p>
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>Brain-Wide Imaging during Chemotaxis</p>
-            <img src="assetsHelena/elenamethod.png" class="w-100" alt="Brain-wide imaging method">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Neuronal atlases</p>
-            <img src="assetsHelena/ClassicAnnotation.jpeg" class="w-100" alt="Neuronal atlas annotation">
-          </section>
-
-          <section data-background="#000000">
-            <p>Multicolor fluorescence atlases</p>
-            <img src="assetsAPS/Rafael.png" class="w-80" alt="Multicolor fluorescence atlas">
-            <p>
-              <small>
-                John Calarco, Mei Zhen <br>
-                Yemini et al. (2021)
-              </small>
-            </p>
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#000000">
-            <p>Brain-wide Imaging</p>
-            <video
-              loop
-              controls
-              class="w-40"
-              src="assetsHelena/output.mp4"
-              data-autoplay
-            ></video>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Freely-moving and immobilized worms</p>
-            <img src="assetsAPS/freely_moving_immobilized_intersection_heatmap.png" class="w-100" alt="Intersection heatmap of moving and immobilized worms">
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>Chemotaxis to diacetyl and IAA</p>
-            <img src="assetsHelena/DiacetylIAAchemotaxis.png" class="w-80" alt="Chemotaxis to diacetyl and IAA">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Chemotaxis to diacetyl and IAA</p>
-            <img src="assetsHelena/Alltracks.png" class="w-80" alt="Chemotaxis tracks">
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>Two behavioral states</p>
-            <img src="assetsAPS/doubleexponential.png" class="w-50" alt="Double exponential model">
-            <p><small>Chen et al. (2025)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Run durations between and within pirouettes</p>
-            <img src="assetsAPS/behavioralstatistics.png" class="w-80" alt="Behavioral statistics">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Maintaining orientation</p>
-            <img src="assetsAPS/anglehistograms.png" class="w-100" alt="Angle histograms">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Pirouettes correct orientation</p>
-            <img src="assetsAPS/pirouettesimprove.png" class="w-60" alt="Pirouettes improve orientation">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Runs wander</p>
-            <img src="assetsAPS/runsrandomize.png" class="w-60" alt="Runs randomize orientation">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Turns within pirouette</p>
-            <img src="assetsAPS/variableturnspirouette.png" class="w-60" alt="Variable turns within pirouette">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Each turn is a coin flip</p>
-            <img src="assetsAPS/eachturnisacoinflip.png" class="w-60" alt="Each turn is a coin flip">
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>
-              Brain-wide differences between <br>
-              immobilized and moving worms
-            </p>
-            <img src="assetsAPS/correlationbrains1.png" class="w-80" alt="Correlation differences between moving and immobilized worms">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>
-              Focused differences between <br>
-              chemotaxis and free navigation
-            </p>
-            <img src="assetsAPS/correlationbrains.png" class="w-80" alt="Correlation differences during chemotaxis and free navigation">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Different neuron-behavior correlations</p>
-            <img src="assetsAPS/neuronbehavior.png" class="w-80" alt="Neuron behavior correlations">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Different neuron-behavior correlations</p>
-            <div class="row">
-              <div class="column twothird">
-                <img src="assetsAPS/flipcorrelations.png" class="w-100" alt="Flip correlations figure">
-              </div>
-              <div class="column middle">
-                <p class="text-left tiny-text spacer" aria-hidden="true"></p>
-              </div>
-              <div class="column third">
-                <img src="assetsAPS/olqmap.png" class="w-100" alt="OLQ map">
-                <img src="assetsAPS/Bag.png" class="w-100" alt="BAG neuron figure">
-              </div>
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section data-background="#FFFFFF">
-            <p>AWA senses concentration changes</p>
-            <img src="assetsAPS/awaactivity.png" class="w-80" alt="AWA activity">
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>Adaptive dynamical threshold of sensitivity</p>
-            <img src="assetsAPS/awathreshold.png" class="w-80" alt="Adaptive threshold of sensitivity">
-            <p><small>Levy and Bargmann (2020)</small></p>
-          </section>
-
-          <section data-background="#FFFFFF">
-            <p>AIB is complicated</p>
-            <div class="row">
-              <div class="column twothird">
-                <img src="assetsAPS/aibcomplicated.png" class="w-100" alt="AIB complexity figure">
-              </div>
-              <div class="column middle">
-                <p class="text-left tiny-text spacer" aria-hidden="true"></p>
-              </div>
-              <div class="column third">
-                <img src="assetsAPS/gordussnippet.png" class="w-100" alt="Gordus figure snippet">
-              </div>
-            </div>
-            <p class="text-center smallish-text">Ray and Gordus (2025)</p>
-          </section>
-        </section>
-
-        <!-- Acknowledgments -->
-        <section>
-          <p>Acknowledgments</p>
-          <div class="acknowledgments">
-            <figure class="acknowledgments-photo">
-              <img src="assets/helena.jpeg" alt="Helena Casademunt">
-            </figure>
-
-            <div class="acknowledgments-list text-left">
-              <p>
-                <small>
-                  <span class="highlight-name">Team fly</span> <br>
-                  David Zimmerman<br>
-                  Stan Lazopulo<br><br>
-                  <span class="highlight-name">Team worm</span> <br>
-                  Helena Casademunt<br>
-                  Ishaan Chandok<br><br>
-                  <span class="highlight-name">Team bacteria</span> <br>
-                  Alina Vravioiu <br>
-                  Gabriel Hosu<br><br><br>
-                  <span class="highlight-name">Team undergrad</span> <br>
-                  Rafael Jacobsen<br>
-                  Rahm Bharara<br><br><br>
-                </small>
-              </p>
-            </div>
-          </div>
-        </section>
+  </style>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <!-- URL slide -->
+    <section data-background="#000000">
+     <p class="url-slide">
+      https://bit.ly/SamuelSyracuse2026
+     </p>
+    </section>
+    <!-- Title slide -->
+    <section data-background="#000000">
+     <h3>
+      Chemotaxis
+     </h3>
+     <p>
+      <small>
+       Aravi Samuel
+      </small>
+     </p>
+     <p>
+      <img alt="Aravi Samuel" class="w-60" src="assets/howardaravi.jpg"/>
+     </p>
+    </section>
+    <section data-background="#000000">
+     <video class="w-60" controls="" data-autoplay="" loop="" src="assets/fluoflagella.mp4">
+     </video>
+     <p>
+      <small>
+       <em>
+        E. coli
+       </em>
+      </small>
+     </p>
+    </section>
+    <section data-background="#E3E3E3">
+     <p>
+      Tracking cells
+     </p>
+     <p>
+      <img class="w-50" src="assets/trackingberg.png"/>
+     </p>
+     <p>
+      <small>
+       If life is getting better, enjoy it more.
+       <br/>
+       If life is getting worse, don't worry about it.
+      </small>
+     </p>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <div class="row">
+       <div class="column left">
+        <p>
+         Sensorimotor behavior
+        </p>
+        <img alt="Run-and-tumble behavior" class="w-70" src="assetsAPS/runtumble.png"/>
+       </div>
+       <div class="column middle">
+        <p aria-hidden="true" class="text-left tiny-text spacer">
+        </p>
+       </div>
+       <div class="column right">
+        <p>
+         Sensorimotor circuit
+        </p>
+        <img alt="Sensorimotor circuit diagram" class="w-100" src="assets/Alon1.png"/>
+       </div>
       </div>
-    </div>
-
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/zoom/zoom.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/search/search.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/math/math.js"></script>
-    <script>
-      Reveal.initialize({
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       <em>
+        C. elegans
+       </em>
+      </p>
+      <div class="row">
+       <div class="column third">
+        <img alt="Run and pirouette behavior" class="w-90" src="assetsAPS/runpirouette.png"/>
+       </div>
+       <div class="column middle">
+        <p aria-hidden="true" class="text-left tiny-text spacer">
+        </p>
+       </div>
+       <div class="column twothird">
+        <img alt="Signal flow diagram" class="w-100" src="assetsAPS/signalflow.png"/>
+        <p>
+         <small>
+          Varshney et al. (2011)
+         </small>
+        </p>
+       </div>
+      </div>
+     </section>
+     <section data-background="#000000">
+      <p>
+       A dynamical connectome
+      </p>
+      <video class="w-50" controls="" data-autoplay="" loop="" src="assets/wormconnectomemovie.mp4">
+      </video>
+      <p>
+       <small>
+        Witvliet et al. (2021)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Brains get bigger
+       <br/>
+       Topology stays the same
+      </p>
+      <img alt="Brain growth topology figure" class="w-80" src="assets/Wit1.png"/>
+      <p>
+       <small>
+        Witvliet et al. (2021)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       More synapses, more connections
+      </p>
+      <img alt="Synapse and connection counts" class="w-80" src="assets/Wit3a.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Variable connectivity
+      </p>
+      <img alt="Variable connectivity figure" class="w-60" src="assets/Wit3b.png"/>
+     </section>
+    </section>
+    <section data-background="#FFFFFF">
+     <p>
+      Tracking cells
+     </p>
+     <img class="w-60" src="assets/ClarkFig4.png"/>
+     <p>
+      <small>
+       Clark et al. (2007)
+      </small>
+     </p>
+    </section>
+    <section data-background="#000000">
+     <img class="w-80" src="assets/streetlighteffect.jpeg"/>
+     <p class="text-left smallish-text">
+      “Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that’s where the light is.”
+     </p>
+     <p class="text-right smallish-text">
+      <i>
+       - Noam Chomsky
+      </i>
+     </p>
+    </section>
+    <section data-background="#000000">
+     <p>
+      Whole-brain imaging
+     </p>
+     <video class="w-60" controls="" data-autoplay="" loop="" src="assets/wholebrainimagingfish.mp4">
+     </video>
+     <p>
+      <small>
+       Ahrens et al. (2013)
+      </small>
+     </p>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       Many ORNs
+      </p>
+      <img alt="Olfactory receptor neuron figure" class="w-80" src="assetsAPS/corineurons.png"/>
+      <p>
+       <small>
+        Bargmann and Horvitz (1993)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Microfluidic manifolds
+      </p>
+      <img alt="Microfluidic manifold setup" class="w-80" src="assetsHelena/AlbertMethodTop.png"/>
+      <p>
+       <small>
+        Lin et al. (2023)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Manifold responses
+      </p>
+      <img alt="Manifold response data" class="w-80" src="assetsHelena/AlbertMethodBottom.png"/>
+      <p>
+       <small>
+        Lin et al. (2023)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Combinatorial codes?
+      </p>
+      <img alt="Brain-wide activity image" class="w-60" src="assetsHelena/AlbertBrainwide.jpg"/>
+      <p>
+       <small>
+        Lin et al. (2023)
+       </small>
+      </p>
+     </section>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       Brain-Wide Imaging during Chemotaxis
+      </p>
+      <img alt="Brain-wide imaging method" class="w-100" src="assetsHelena/elenamethod.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Neuronal atlases
+      </p>
+      <img alt="Neuronal atlas annotation" class="w-100" src="assetsHelena/ClassicAnnotation.jpeg"/>
+     </section>
+     <section data-background="#000000">
+      <p>
+       Multicolor fluorescence atlases
+      </p>
+      <img alt="Multicolor fluorescence atlas" class="w-80" src="assetsAPS/Rafael.png"/>
+      <p>
+       <small>
+        John Calarco, Mei Zhen
+        <br/>
+        Yemini et al. (2021)
+       </small>
+      </p>
+     </section>
+    </section>
+    <section>
+     <section data-background="#000000">
+      <p>
+       Brain-wide Imaging
+      </p>
+      <video class="w-40" controls="" data-autoplay="" loop="" src="assetsHelena/output.mp4">
+      </video>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Freely-moving and immobilized worms
+      </p>
+      <img alt="Intersection heatmap of moving and immobilized worms" class="w-100" src="assetsAPS/freely_moving_immobilized_intersection_heatmap.png"/>
+     </section>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       Chemotaxis to diacetyl and IAA
+      </p>
+      <img alt="Chemotaxis to diacetyl and IAA" class="w-80" src="assetsHelena/DiacetylIAAchemotaxis.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Chemotaxis to diacetyl and IAA
+      </p>
+      <img alt="Chemotaxis tracks" class="w-80" src="assetsHelena/Alltracks.png"/>
+     </section>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       Two behavioral states
+      </p>
+      <img alt="Double exponential model" class="w-50" src="assetsAPS/doubleexponential.png"/>
+      <p>
+       <small>
+        Chen et al. (2025)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Run durations between and within pirouettes
+      </p>
+      <img alt="Behavioral statistics" class="w-80" src="assetsAPS/behavioralstatistics.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Maintaining orientation
+      </p>
+      <img alt="Angle histograms" class="w-100" src="assetsAPS/anglehistograms.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Pirouettes correct orientation
+      </p>
+      <img alt="Pirouettes improve orientation" class="w-60" src="assetsAPS/pirouettesimprove.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Runs wander
+      </p>
+      <img alt="Runs randomize orientation" class="w-60" src="assetsAPS/runsrandomize.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Turns within pirouette
+      </p>
+      <img alt="Variable turns within pirouette" class="w-60" src="assetsAPS/variableturnspirouette.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Each turn is a coin flip
+      </p>
+      <img alt="Each turn is a coin flip" class="w-60" src="assetsAPS/eachturnisacoinflip.png"/>
+     </section>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       Brain-wide differences between
+       <br/>
+       immobilized and moving worms
+      </p>
+      <img alt="Correlation differences between moving and immobilized worms" class="w-80" src="assetsAPS/correlationbrains1.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Focused differences between
+       <br/>
+       chemotaxis and free navigation
+      </p>
+      <img alt="Correlation differences during chemotaxis and free navigation" class="w-80" src="assetsAPS/correlationbrains.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Different neuron-behavior correlations
+      </p>
+      <img alt="Neuron behavior correlations" class="w-80" src="assetsAPS/neuronbehavior.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Different neuron-behavior correlations
+      </p>
+      <div class="row">
+       <div class="column twothird">
+        <img alt="Flip correlations figure" class="w-100" src="assetsAPS/flipcorrelations.png"/>
+       </div>
+       <div class="column middle">
+        <p aria-hidden="true" class="text-left tiny-text spacer">
+        </p>
+       </div>
+       <div class="column third">
+        <img alt="OLQ map" class="w-100" src="assetsAPS/olqmap.png"/>
+        <img alt="BAG neuron figure" class="w-100" src="assetsAPS/Bag.png"/>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-background="#FFFFFF">
+      <p>
+       AWA senses concentration changes
+      </p>
+      <img alt="AWA activity" class="w-80" src="assetsAPS/awaactivity.png"/>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       Adaptive dynamical threshold of sensitivity
+      </p>
+      <img alt="Adaptive threshold of sensitivity" class="w-80" src="assetsAPS/awathreshold.png"/>
+      <p>
+       <small>
+        Levy and Bargmann (2020)
+       </small>
+      </p>
+     </section>
+     <section data-background="#FFFFFF">
+      <p>
+       AIB is complicated
+      </p>
+      <div class="row">
+       <div class="column twothird">
+        <img alt="AIB complexity figure" class="w-100" src="assetsAPS/aibcomplicated.png"/>
+       </div>
+       <div class="column middle">
+        <p aria-hidden="true" class="text-left tiny-text spacer">
+        </p>
+       </div>
+       <div class="column third">
+        <img alt="Gordus figure snippet" class="w-100" src="assetsAPS/gordussnippet.png"/>
+       </div>
+      </div>
+      <p class="text-center smallish-text">
+       Ray and Gordus (2025)
+      </p>
+     </section>
+    </section>
+    <!-- Acknowledgments -->
+    <section>
+     <p>
+      Acknowledgments
+     </p>
+     <div class="acknowledgments">
+      <figure class="acknowledgments-photo">
+       <img alt="Helena Casademunt" src="assets/helena.jpeg"/>
+      </figure>
+      <div class="acknowledgments-list text-left">
+       <p>
+        <small>
+         <span class="highlight-name">
+          Team fly
+         </span>
+         <br/>
+         David Zimmerman
+         <br/>
+         Stan Lazopulo
+         <br/>
+         <br/>
+         <span class="highlight-name">
+          Team worm
+         </span>
+         <br/>
+         Helena Casademunt
+         <br/>
+         Ishaan Chandok
+         <br/>
+         <br/>
+         <span class="highlight-name">
+          Team bacteria
+         </span>
+         <br/>
+         Alina Vravioiu
+         <br/>
+         Gabriel Hosu
+         <br/>
+         <br/>
+         <br/>
+         <span class="highlight-name">
+          Team undergrad
+         </span>
+         <br/>
+         Rafael Jacobsen
+         <br/>
+         Rahm Bharara
+         <br/>
+         <br/>
+         <br/>
+        </small>
+       </p>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+  <script src="dist/reveal.js">
+  </script>
+  <script src="plugin/zoom/zoom.js">
+  </script>
+  <script src="plugin/notes/notes.js">
+  </script>
+  <script src="plugin/search/search.js">
+  </script>
+  <script src="plugin/markdown/markdown.js">
+  </script>
+  <script src="plugin/highlight/highlight.js">
+  </script>
+  <script src="plugin/math/math.js">
+  </script>
+  <script>
+   Reveal.initialize({
         controls: true,
         progress: true,
         center: true,
@@ -511,6 +648,6 @@
           RevealMath.MathJax2
         ]
       });
-    </script>
-  </body>
+  </script>
+ </body>
 </html>
