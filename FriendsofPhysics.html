@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Friends of Physics 2026
+  </title>
+  <meta content="Friends of Physics presentation: using artificial neural networks to map real neural networks." name="description"/>
+  <meta content="Aravi Samuel" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="dist/reset.css" rel="stylesheet"/>
+  <link href="dist/reveal.css" rel="stylesheet"/>
+  <link href="dist/theme/black.css" id="theme" rel="stylesheet"/>
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link href="plugin/highlight/monokai.css" rel="stylesheet"/>
+  <style>
+   :root {
+  --accent: #ffff00;
+  --dark: #000000;
+  --gray: #272727;
+  --light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.reveal section {
+  text-align: center;
+}
+
+.reveal img,
+.reveal video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.reveal video {
+  height: auto;
+}
+
+.reveal small {
+  line-height: 1.3;
+}
+
+.reveal table,
+.reveal tr,
+.reveal td,
+.reveal th {
+  border: 0;
+}
+
+.reveal tr:hover {
+  background-color: gray;
+}
+
+.row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column {
+  min-width: 0;
+}
+
+.left,
+.right {
+  flex: 0 1 45%;
+}
+
+.middle {
+  flex: 0 1 10%;
+}
+
+.third {
+  flex: 0 1 33%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.red {
+  color: red;
+}
+
+.fs-16 { font-size: 16px; }
+.fs-18 { font-size: 18px; }
+.fs-20 { font-size: 20px; }
+.fs-26 { font-size: 26px; }
+.fs-30 { font-size: 30px; }
+
+.w-40 { width: 40%; }
+.w-45 { width: 45%; }
+.w-50 { width: 50%; }
+.w-60 { width: 60%; }
+.w-70 { width: 70%; }
+.w-80 { width: 80%; }
+.w-100 { width: 100%; }
+
+.h-300 { height: 300px; }
+
+.fit-video {
+  width: min(100%, 1200px);
+  max-height: 75vh;
+}
+
+
+.acknowledgments-slide {
+  padding: 0 1rem;
+}
+
+.acknowledgments-title {
+  margin-bottom: 1.2rem;
+}
+
+.ack-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1fr;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.ack-card {
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.18);
+  border-radius: 16px;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+.ack-group + .ack-group {
+  margin-top: 0.8rem;
+}
+
+.ack-heading {
+  color: var(--accent);
+  font-weight: 500;
+  margin: 0 0 0.35rem;
+}
+
+.ack-list {
+  font-size: 18px;
+  line-height: 1.28;
+}
+
+.ack-list.compact {
+  font-size: 15px;
+  line-height: 1.22;
+}
+
+.ack-name,
+.affiliation {
+  white-space: nowrap;
+}
+
+.affiliation {
+  font-style: italic;
+}
+
+.positioned-column {
+  position: absolute;
+  height: 600px;
+}
+  </style>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet" type="text/css"/>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+
+   <!-- Any section element inside of this container is displayed as a slide -->
+   <div class="slides">
+
+    <!-- URL Slide -->
+
+    <section data-background="#000000">
+     <p class="fs-30">
+      https://bit.ly/FOP_ADTS_2026
+     </p>
+    </section>
+
+    <!-- Title Slide -->
+
+    <section data-background="#000000">
+     <p>
+      Using artificial neural networks
+      <br/>
+      to map real neural networks
+     </p>
+     <p>
+      <small>
+       Aravi Samuel
+      </small>
+     </p>
+     <p>
+      <img class="w-40" src="assets/howardaravi.jpg"/>
+     </p>
+    </section>
+
+    <!-- Bacteria swimming  -->
+
+    <section data-background="#000000">
+     <video class="w-60" controls data-autoplay loop src="assets/fluoflagella.mp4">
+     </video>
+     <p>
+      <small>
+       <em>
+        E. coli
+       </em>
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#E3E3E3">
+     <p>
+      Tracking cells
+     </p>
+     <p>
+      <img class="w-45" src="assets/trackingberg.png"/>
+     </p>
+     <p>
+      <small>
+       If life is getting better, enjoy it more.
+       <br/>
+       If life is getting worse, don't worry about it.
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      Circuits from input to output
+     </p>
+     <img class="w-40" src="assets/Alon1.png"/>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      <i style="font-style: italic !important">
+       Caenorhabditis elegans
+      </i>
+     </p>
+     <img class="w-80" src="assets/theworms.png"/>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      Circuits from input to output
+     </p>
+     <img class="w-80" src="assets/whiteamphids.png"/>
+     <p>
+      <small>
+       White et al. (1986)
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      Tracking neurons
+     </p>
+     <video class="w-80" controls data-autoplay loop src="assets/clarktracking.mp4">
+     </video>
+     <p>
+      <small>
+       Clark et al. (2007)
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#000000">
+     <img class="w-80" src="assets/streetlighteffect.jpeg"/>
+     <p class="text-left fs-26">
+      &ldquo;Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that&rsquo;s where the light is.&rdquo;
+     </p>
+     <p class="text-right fs-26">
+      <i style="font-style: italic !important">
+       - Noam Chomsky
+      </i>
+     </p>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      Connectomics
+     </p>
+     <video class="w-50" controls data-autoplay loop src="assets/wormconnectomemovie.mp4">
+     </video>
+     <p>
+      <small>
+       Witvliet et al. (2021)
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#FFFFFF">
+     <p>
+      Bigger brains 
+      <br/>
+      Same topology 
+     </p>
+     <img class="w-80" src="assets/Wit1.png"/>
+     <p>
+      <small>
+       Witvliet et al. (2021)
+      </small>
+     </p>
+    </section>
+
+    <section data-background="#FFFFFF">
+     <p>
+      More synapses, more connections
+     </p>
+     <img class="w-80" src="assets/Wit3a.png"/>
+    </section>
+
+    <section data-background="#FFFFFF">
+     <p>
+      Stable, developmental,
+      and variable connectivity
+     </p>
+     <img class="w-60" src="assets/Wit3b.png"/>
+    </section>
+
+    <!-- SmartEM -->
+
+    <section>
+
+     <section data-background="#000000">
+      <p>
+       Connectomics
+      </p>
+      <p data-id="picture">
+       <img class="w-40" src="assetsEM/NanoscaleImaging.png"/>
+      </p>
+      <p class="fs-30">
+       The problem:
+       <span class="accent">
+        <em>
+         mapping
+        </em>
+       </span>
+       tissue at millimeter scale
+       <br/>
+       and
+       <span class="accent">
+        <em>
+         resolving
+        </em>
+       </span>
+       at nanometer scale
+      </p>
+     </section>
+
+     <section data-background="#000000">
+      <p>
+       Our testbed: Mouse Visual Cortex
+      </p>
+      <video class="w-70" controls data-autoplay loop src="assetsEM/insetregion.mp4">
+      </video>
+      <p>
+       <small>
+        Karlupia et al. (2023)
+       </small>
+      </p>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <p>
+       Scanning Electron Microscopes
+      </p>
+      <div style="position: absolute; top: 150px; left: 3%; width: 27%">
+       <p class="fs-20">
+        1 cubic millimeter
+        <br/>
+        &darr;
+        <br/>
+        4 nm &times; 4 nm &times; 30 nm per voxel
+        <br/>
+        &darr;
+        <br/>
+        2,000,000,000,000,000 pixels
+       </p>
+      </div>
+      <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px">
+       <img class="h-300" src="assetsEM/SinglebeamSEM.png"/>
+       <p class="fs-20">
+        1 &micro;s / pixel
+        <br/>
+        &darr;
+        <br/>
+        60 years
+       </p>
+      </div>
+      <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px">
+       <img class="h-300" src="assetsEM/MultibeamSEM.png"/>
+       <p class="fs-20">
+        1 &micro;s / pixel
+        <br/>
+        <em>
+         with 61 beams
+        </em>
+        <br/>
+        &darr;
+        <br/>
+        ~2 years
+       </p>
+      </div>
+     </section>
+
+     <section data-background="#000000">
+      <p>
+       Fast, noisy images &rarr; lower segmentation quality
+      </p>
+      <img class="w-80" src="assetsEM/fastnoisyerror.png"/>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <img class="w-100" data-id="lowtohigherror" src="assetsEM/image7A.png"/>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <img class="w-100" data-id="lowtohigherror" src="assetsEM/image7B.png"/>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <img class="w-100" data-id="lowtohigherror" src="assetsEM/image7C.png"/>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <img class="w-100" data-id="lowtohigherror" src="assetsEM/image7D.png"/>
+     </section>
+
+     <section data-auto-animate="" data-background="#000000">
+      <img class="w-100" data-id="lowtohigherror" src="assetsEM/image7.png"/>
+     </section>
+    </section>
+
+    <section data-background="#000000">
+     <p>
+      <span class="accent">
+       The idea in a 🥜
+      </span>
+     </p>
+     <p>
+      Use ultrafast imaging everywhere
+     </p>
+     <p>
+      Add slow imaging only where errors might occur
+     </p>
+    </section>
+
+    <section>
+
+     <section data-auto-animate="" data-background="#272727">
+      <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px">
+       <p>
+        <span class="accent">
+         ML-trained "error network"
+        </span>
+       </p>
+       <p data-id="errornetwork">
+        Trained with images containing segmentation errors
+        <br/>
+        predict error prone regions
+       </p>
+       <img class="w-80" data-id="errornetwork" src="assetsEM/errnetworkblack.png"/>
+      </div>
+     </section>
+
+     <section data-auto-animate="" data-background="#272727">
+      <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px">
+       <p>
+        <span class="accent">
+         Automatically rescan error-prone regions 
+        </span>
+       </p>
+       <img class="w-80" data-id="rescan" src="assetsEM/rescanoutput.png"/>
+       <p class="fs-30" data-id="rescan2">
+        Rescans and fast scans are fused
+       </p>
+      </div>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#000000">
+      <p>
+       Mouse cortex segmented with SmartEM
+      </p>
+      <video class="w-60" controls data-autoplay loop src="assetsEM/Highmag.mp4">
+      </video>
+     </section>
+
+     <section data-background="#000000">
+      <p>
+       3D Segmentation from SmartEM
+      </p>
+      <img class="w-60" src="assetsEM/Figure_3D_arrows.jpg"/>
+      <p class="fs-20">
+       <span class="accent">
+        Same benchmark performance as state-of-the-art multibeam pipeline
+       </span>
+      </p>
+      <small>
+       Meirovitch et al. (2026)
+      </small>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Chemotaxis
+      </p>
+      <img alt="Olfactory receptor neuron figure" class="w-60" src="assetsAPS/corineurons.png"/>
+      <p>
+       <small>
+        Bargmann and Horvitz (1993)
+       </small>
+      </p>
+     </section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Microfluidic manifolds
+      </p>
+      <img alt="Microfluidic manifold setup" class="w-60" src="assetsHelena/AlbertMethodTop.png"/>
+      <p>
+       <small>
+        Lin et al. (2023)
+       </small>
+      </p>
+     </section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Manifold responses
+      </p>
+      <img alt="Manifold response data" class="w-60" src="assetsHelena/AlbertMethodBottom.png"/>
+      <p>
+       <small>
+        Lin et al. (2023)
+       </small>
+      </p>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Brain-Wide Imaging during Chemotaxis
+      </p>
+      <img alt="Brain-wide imaging method" class="w-100" src="AChemS/fig1ABC.png"/>
+      <small>
+       Venkatachalam et al. (2021)
+      </small>
+     </section>
+
+     <section data-background="#000000">
+      <p>
+       Neuronal atlases
+      </p>
+      <img alt="Neuronal atlas annotation" class="w-80" src="AChemS/fig1D.png"/>
+      <small>
+       Yemini et al. (2021)
+      </small>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#000000">
+      <p>
+       Brain-wide Imaging
+      </p>
+      <video class="fit-video" controls data-autoplay loop src="assetsHelena/output.mp4">
+      </video>
+     </section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Freely-moving and immobilized worms
+      </p>
+      <img alt="Intersection heatmap of moving and immobilized worms" class="w-100" src="AChemS/fig1EF.png"/>
+      <small>
+       Casademunt et al. (2026)
+      </small>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Brain-wide differences between
+       <br/>
+       immobilized and moving worms
+      </p>
+      <img alt="Correlation differences between moving and immobilized worms" class="w-80" src="assetsAPS/correlationbrains1.png"/>
+      <small>
+       Casademunt et al. (2026)
+      </small>
+     </section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Focused differences between
+       <br/>
+       chemotaxis and free navigation
+      </p>
+      <img alt="Correlation differences during chemotaxis and free navigation" class="w-80" src="assetsAPS/correlationbrains.png"/>
+      <small>
+       Casademunt et al. (2026)
+      </small>
+     </section>
+    </section>
+
+    <section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Functional mapping of olfactory sensorimotor circuit
+      </p>
+      <img alt="functional mapping" class="w-100" src="AChemS/fig7a.png"/>
+      <small>
+       Casademunt et al. (2026)
+      </small>
+     </section>
+
+     <section data-background="#FFFFFF">
+      <p>
+       Functional mapping of olfactory sensorimotor circuit
+      </p>
+      <img alt="functional mapping" class="w-100" src="AChemS/fig7b.png"/>
+      <small>
+       Casademunt et al. (2026)
+      </small>
+     </section>
+    </section>
+
+    <section class="acknowledgments-slide" data-background="#000000">
+     <p class="acknowledgments-title">
+      Acknowledgments
+     </p>
+
+     <div class="ack-grid">
+      <div class="ack-card">
+       <div class="ack-group">
+        <p class="ack-heading">
+         Samuel Lab
+        </p>
+        <div class="ack-list">
+         Ishaan Chandok<br/>
+         Helena Casademunt<br/>
+         Dr. Stan Lazopulo<br/>
+         Dr. Alina Vrabiou<br/>
+         Dr. Gabriel Hosu<br/>
+         Rafael Jacobsen
+        </div>
+       </div>
+      </div>
+
+      <div class="ack-card">
+       <p class="ack-heading">
+        Alumni
+       </p>
+       <div class="ack-list compact">
+        <span class="ack-name">Prof. Damon Clark</span>, <span class="affiliation">Yale</span><br/>
+        <span class="ack-name">Prof. Andrew Leifer</span>, <span class="affiliation">Princeton</span><br/>
+        <span class="ack-name">Prof. V. Venkatachalam</span>, <span class="affiliation">Northeastern Univ</span><br/>
+        <span class="ack-name">Prof. Sahand Jamal</span>, <span class="affiliation">EPFL</span><br/>
+        <span class="ack-name">Prof. Quan Wen</span>, <span class="affiliation">USTC</span><br/>
+        <span class="ack-name">Prof. Guangwei Si</span>, <span class="affiliation">Beijing</span><br/>
+        <span class="ack-name">Prof. Ni Ji</span>, <span class="affiliation">Beijing</span><br/>
+        <span class="ack-name">Prof. Quan Wen</span>, <span class="affiliation">USTC</span><br/>
+        <span class="ack-name">Prof. Guangwei Si</span>, <span class="affiliation">Beijing</span><br/>
+        <span class="ack-name">Prof. Marc Gershow</span>, <span class="affiliation">NYU</span><br/>
+        <span class="ack-name">Prof. Mason Klein</span>, <span class="affiliation">UMiami</span>
+        <span class="ack-name">Prof. Chris Gabel</span>, <span class="affiliation">BU</span><br/>
+        <span class="ack-name">Prof. Luis Hernandez-Nunez</span>, <span class="affiliation">Stanford</span><br/>
+        <span class="ack-name">Prof. Chris Fang-Yen</span>, <span class="affiliation">Ohio State</span><br/>
+        <span class="ack-name">Prof. Ashley Carter</span>, <span class="affiliation">Amherst College</span><br/>
+        <span class="ack-name">Prof. Albert Kao</span>, <span class="affiliation">UMass Boston</span><br/>
+        <span class="ack-name">Dr. David Biron</span>, <span class="affiliation">University of Chicago</span>
+        <span class="ack-name">Dr. Katrin Vogt</span>, <span class="affiliation">University of Konstanz</span><br/><br>
+        <span class="ack-name">Dr. David Zimmerman</span>, <span class="affiliation">Yale</span><br/>
+        <span class="ack-name">Dr. Albert Lin</span>, <span class="affiliation">Princeton</span><br/>
+        <span class="ack-name">Dr. Subhaneil Lahiri</span>, <span class="affiliation">Stanford</span><br/>
+        <span class="ack-name">Dr. Jess Kanwal</span>, <span class="affiliation">Caltech</span><br/>
+        <span class="ack-name">Dr. Core Park</span>, <span class="affiliation">Harvard</span>
+       </div>
+      </div>
+
+      <div class="ack-card">
+       <div class="ack-group">
+        <p class="ack-heading">
+         Zhen Lab
+        </p>
+        <div class="ack-list">
+         Dr. Daniel Witvliet<br/>
+         Dr. Ben Mulcahy<br/>
+         Dr. Wesley Hung
+        </div>
+       </div>
+
+       <div class="ack-group">
+        <p class="ack-heading">
+         Lichtman Lab
+        </p>
+        <div class="ack-list">
+         Dr. Richard Schalek<br/>
+         Dr. Yaron Meirovitch<br/>
+         Dr. Yuelong Wu<br/>
+         Dr. Daniel Berger
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+  <script src="dist/reveal.js">
+  </script>
+  <script src="plugin/zoom/zoom.js">
+  </script>
+  <script src="plugin/notes/notes.js">
+  </script>
+  <script src="plugin/search/search.js">
+  </script>
+  <script src="plugin/markdown/markdown.js">
+  </script>
+  <script src="plugin/highlight/highlight.js">
+  </script>
+  <script src="plugin/math/math.js">
+  </script>
+  <script>
+   Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        history: true,
+        transition: 'linear',
+        mathjax2: {
+          config: 'TeX-AMS_HTML-full',
+          TeX: {
+            Macros: {
+              R: '\\mathbb{R}',
+              set: ['\\left\\{#1 \\; ; \\; #2\\right\\}', 2]
+            }
+          }
+        },
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath.MathJax2
+        ]
+      });
+  </script>
+ </body>
+</html>
