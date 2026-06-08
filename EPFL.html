@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>
+   APS 2026 Chemotaxis
+  </title>
+<meta content="EPFL 2026 Chemotaxis presentation by Aravi Samuel" name="description"/>
+<meta content="Aravi Samuel" name="author"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="dist/reset.css" rel="stylesheet"/>
+<link href="dist/reveal.css" rel="stylesheet"/>
+<link href="dist/theme/black.css" id="theme" rel="stylesheet"/>
+<link href="plugin/highlight/monokai.css" rel="stylesheet"/>
+<link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+<style>
+   *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --layout-gap: 2rem;
+      }
+
+      table,
+      tr,
+      td,
+      th {
+        border: hidden;
+      }
+
+      tr:hover {
+        background-color: gray;
+      }
+
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--layout-gap);
+        width: 100%;
+      }
+
+      .column {
+        min-width: 0;
+      }
+
+      .left,
+      .right {
+        flex: 0 0 45%;
+      }
+
+      .middle {
+        flex: 0 0 10%;
+      }
+
+      .third {
+        flex: 0 0 30%;
+      }
+
+      .twothird {
+        flex: 0 0 60%;
+      }
+
+      .spacer {
+        min-height: 1.5rem;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .tiny-text {
+        font-size: 20px;
+      }
+
+      .smallish-text {
+        font-size: 25px;
+      }
+
+      .url-slide {
+        font-size: 30px;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .w-90 {
+        width: 90%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .w-70 {
+        width: 70%;
+      }
+
+      .w-60 {
+        width: 60%;
+      }
+
+      .w-50 {
+        width: 50%;
+      }
+
+      .w-40 {
+        width: 40%;
+      }
+
+      .acknowledgments {
+        position: relative;
+        min-height: 32rem;
+      }
+
+      .acknowledgments-photo {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 60%;
+      }
+
+      .acknowledgments-list {
+        position: absolute;
+        top: 60px;
+        left: 70%;
+        width: 30%;
+      }
+
+      .highlight-name {
+        color: yellow;
+      }
+
+      .acknowledgments-slide {
+        padding: 0 1rem;
+      }
+
+      .acknowledgments-title {
+        margin-bottom: 1.2rem;
+      }
+
+      .ack-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr 1fr;
+        gap: 1.1rem;
+        align-items: start;
+      }
+
+      .ack-card {
+        background: rgb(255 255 255 / 0.08);
+        border: 1px solid rgb(255 255 255 / 0.18);
+        border-radius: 16px;
+        padding: 0.75rem 0.9rem;
+        text-align: left;
+      }
+
+      .ack-group + .ack-group {
+        margin-top: 0.8rem;
+      }
+
+      .ack-heading {
+        color: var(--accent, yellow);
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0 0 0.35rem;
+      }
+
+      .ack-list {
+        font-size: 18px;
+        line-height: 1.28;
+      }
+
+      .ack-list.compact {
+        font-size: 15px;
+        line-height: 1.22;
+      }
+
+      .ack-name,
+      .affiliation {
+        white-space: nowrap;
+      }
+
+      .affiliation {
+        font-style: italic;
+      }
+
+  </style>
+<script src="https://tikzjax.com/v1/tikzjax.js">
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<!-- URL slide -->
+<section data-background="#000000">
+<p class="url-slide">
+      https://bit.ly/SamuelEPFL2026
+     </p>
+</section>
+<!-- Title slide -->
+<section data-background="#000000">
+<h3>
+      Chemotaxis
+     </h3>
+<p>
+<small>
+       Aravi Samuel
+      </small>
+</p>
+<p>
+<img alt="Aravi Samuel" class="w-60" src="assets/howardaravi.jpg"/>
+</p>
+</section>
+<section data-background="#000000">
+<video class="w-60" controls="" data-autoplay="" loop="" src="assets/fluoflagella.mp4">
+</video>
+<p>
+<small>
+<em>
+        E. coli
+       </em>
+</small>
+</p>
+</section>
+<section data-background="#E3E3E3">
+<p>
+      Tracking cells
+     </p>
+<p>
+<img class="w-50" src="assets/trackingberg.png"/>
+</p>
+<p>
+<small>
+       If life is getting better, enjoy it more.
+       <br/>
+       If life is getting worse, don't worry about it.
+      </small>
+</p>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<div class="row">
+<div class="column left">
+<p>
+         Sensorimotor behavior
+        </p>
+<img alt="Run-and-tumble behavior" class="w-70" src="assetsAPS/runtumble.png"/>
+</div>
+<div class="column middle">
+<p aria-hidden="true" class="text-left tiny-text spacer">
+</p>
+</div>
+<div class="column right">
+<p>
+         Sensorimotor circuit
+        </p>
+<img alt="Sensorimotor circuit diagram" class="w-100" src="assets/Alon1.png"/>
+</div>
+</div>
+</section>
+<section data-background="#FFFFFF">
+<p>
+<em>
+        C. elegans
+       </em>
+</p>
+<div class="row">
+<div class="column third">
+<img alt="Run and pirouette behavior" class="w-90" src="assetsAPS/runpirouette.png"/>
+</div>
+<div class="column middle">
+<p aria-hidden="true" class="text-left tiny-text spacer">
+</p>
+</div>
+<div class="column twothird">
+<img alt="Signal flow diagram" class="w-100" src="assetsAPS/signalflow.png"/>
+<p>
+<small>
+          Varshney et al. (2011)
+         </small>
+</p>
+</div>
+</div>
+</section>
+<section data-background="#000000">
+<p>
+       A dynamical connectome
+      </p>
+<video class="w-50" controls="" data-autoplay="" loop="" src="assets/wormconnectomemovie.mp4">
+</video>
+<p>
+<small>
+        Witvliet et al. (2021)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Brains get bigger
+       <br/>
+       Topology stays the same
+      </p>
+<img alt="Brain growth topology figure" class="w-80" src="assets/Wit1.png"/>
+<p>
+<small>
+        Witvliet et al. (2021)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       More synapses, more connections
+      </p>
+<img alt="Synapse and connection counts" class="w-80" src="assets/Wit3a.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Variable connectivity
+      </p>
+<img alt="Variable connectivity figure" class="w-60" src="assets/Wit3b.png"/>
+</section>
+</section>
+<section data-background="#FFFFFF">
+<p>
+      Tracking cells
+     </p>
+<img class="w-60" src="assets/ClarkFig4.png"/>
+<p>
+<small>
+       Clark et al. (2007)
+      </small>
+</p>
+</section>
+<section data-background="#000000">
+<img class="w-80" src="assets/streetlighteffect.jpeg"/>
+<p class="text-left smallish-text">
+      “Science is a bit like the joke about the drunk who is looking under a lamppost for a key that he has lost on the other side of the street, because that’s where the light is.”
+     </p>
+<p class="text-right smallish-text">
+<i>
+       - Noam Chomsky
+      </i>
+</p>
+</section>
+<section data-background="#000000">
+<p>
+      Whole-brain imaging
+     </p>
+<video class="w-60" controls="" data-autoplay="" loop="" src="assets/wholebrainimagingfish.mp4">
+</video>
+<p>
+<small>
+       Ahrens et al. (2013)
+      </small>
+</p>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       Many ORNs
+      </p>
+<img alt="Olfactory receptor neuron figure" class="w-80" src="assetsAPS/corineurons.png"/>
+<p>
+<small>
+        Bargmann and Horvitz (1993)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Microfluidic manifolds
+      </p>
+<img alt="Microfluidic manifold setup" class="w-80" src="assetsHelena/AlbertMethodTop.png"/>
+<p>
+<small>
+        Lin et al. (2023)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Manifold responses
+      </p>
+<img alt="Manifold response data" class="w-80" src="assetsHelena/AlbertMethodBottom.png"/>
+<p>
+<small>
+        Lin et al. (2023)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Combinatorial codes?
+      </p>
+<img alt="Brain-wide activity image" class="w-60" src="assetsHelena/AlbertBrainwide.jpg"/>
+<p>
+<small>
+        Lin et al. (2023)
+       </small>
+</p>
+</section>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       Brain-Wide Imaging during Chemotaxis
+      </p>
+<img alt="Brain-wide imaging method" class="w-100" src="assetsHelena/elenamethod.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Neuronal atlases
+      </p>
+<img alt="Neuronal atlas annotation" class="w-100" src="assetsHelena/ClassicAnnotation.jpeg"/>
+</section>
+<section data-background="#000000">
+<p>
+       Multicolor fluorescence atlases
+      </p>
+<img alt="Multicolor fluorescence atlas" class="w-80" src="assetsAPS/Rafael.png"/>
+<p>
+<small>
+        Hongruo Zhang, Mei Zhen
+        <br/>
+        John Laver, John Calarco
+       </small>
+</p>
+</section>
+</section>
+<section>
+<section data-background="#000000">
+<p>
+       Brain-wide Imaging
+      </p>
+<video class="w-40" controls="" data-autoplay="" loop="" src="assetsHelena/output.mp4">
+</video>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Freely-moving and immobilized worms
+      </p>
+<img alt="Intersection heatmap of moving and immobilized worms" class="w-100" src="assetsAPS/freely_moving_immobilized_intersection_heatmap.png"/>
+</section>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       Chemotaxis to diacetyl and IAA
+      </p>
+<img alt="Chemotaxis to diacetyl and IAA" class="w-80" src="assetsHelena/DiacetylIAAchemotaxis.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Chemotaxis to diacetyl and IAA
+      </p>
+<img alt="Chemotaxis tracks" class="w-80" src="assetsHelena/Alltracks.png"/>
+</section>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       Two behavioral states
+      </p>
+<img alt="Double exponential model" class="w-50" src="assetsAPS/doubleexponential.png"/>
+<p>
+<small>
+        Chen et al. (2025)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Run durations between and within pirouettes
+      </p>
+<img alt="Behavioral statistics" class="w-80" src="assetsAPS/behavioralstatistics.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Maintaining orientation
+      </p>
+<img alt="Angle histograms" class="w-100" src="assetsAPS/anglehistograms.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Pirouettes correct orientation
+      </p>
+<img alt="Pirouettes improve orientation" class="w-60" src="assetsAPS/pirouettesimprove.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Runs wander
+      </p>
+<img alt="Runs randomize orientation" class="w-60" src="assetsAPS/runsrandomize.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Turns within pirouette
+      </p>
+<img alt="Variable turns within pirouette" class="w-60" src="assetsAPS/variableturnspirouette.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Each turn is a coin flip
+      </p>
+<img alt="Each turn is a coin flip" class="w-60" src="assetsAPS/eachturnisacoinflip.png"/>
+</section>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       Brain-wide differences between
+       <br/>
+       immobilized and moving worms
+      </p>
+<img alt="Correlation differences between moving and immobilized worms" class="w-80" src="assetsAPS/correlationbrains1.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Focused differences between
+       <br/>
+       chemotaxis and free navigation
+      </p>
+<img alt="Correlation differences during chemotaxis and free navigation" class="w-80" src="assetsAPS/correlationbrains.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Different neuron-behavior correlations
+      </p>
+<img alt="Neuron behavior correlations" class="w-80" src="assetsAPS/neuronbehavior.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Different neuron-behavior correlations
+      </p>
+<div class="row">
+<div class="column twothird">
+<img alt="Flip correlations figure" class="w-100" src="assetsAPS/flipcorrelations.png"/>
+</div>
+<div class="column middle">
+<p aria-hidden="true" class="text-left tiny-text spacer">
+</p>
+</div>
+<div class="column third">
+<img alt="OLQ map" class="w-100" src="assetsAPS/olqmap.png"/>
+<img alt="BAG neuron figure" class="w-100" src="assetsAPS/Bag.png"/>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section data-background="#FFFFFF">
+<p>
+       AWA senses concentration changes
+      </p>
+<img alt="AWA activity" class="w-80" src="assetsAPS/awaactivity.png"/>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       Adaptive dynamical threshold of sensitivity
+      </p>
+<img alt="Adaptive threshold of sensitivity" class="w-80" src="assetsAPS/awathreshold.png"/>
+<p>
+<small>
+        Levy and Bargmann (2020)
+       </small>
+</p>
+</section>
+<section data-background="#FFFFFF">
+<p>
+       AIB is complicated
+      </p>
+<div class="row">
+<div class="column twothird">
+<img alt="AIB complexity figure" class="w-100" src="assetsAPS/aibcomplicated.png"/>
+</div>
+<div class="column middle">
+<p aria-hidden="true" class="text-left tiny-text spacer">
+</p>
+</div>
+<div class="column third">
+<img alt="Gordus figure snippet" class="w-100" src="assetsAPS/gordussnippet.png"/>
+</div>
+</div>
+<p class="text-center smallish-text">
+       Ray and Gordus (2025)
+      </p>
+</section>
+</section>
+<!-- Acknowledgments -->
+    <section class="acknowledgments-slide" data-background="#000000">
+     <p class="acknowledgments-title">
+      Acknowledgments
+     </p>
+
+     <div class="ack-grid">
+      <div class="ack-card">
+       <div class="ack-group">
+        <p class="ack-heading">
+         Current
+        </p>
+        <div class="ack-list">
+         Ishaan Chandok, <em> C. elegans </em> <br/>
+         Helena Casademunt, <em> C. elegans </em> <br/>
+         Dr. Stan Lazopulo, <em> Drosophila </em> <br/>
+         Dr. Alina Vrabiou, <em> E. coli </em> <br/>
+         Dr. Gabriel Hosu, <em> E. coli </em> <br/>
+         Rafael Jacobsen, <em> C. elegans </em> </div>
+       </div>
+      </div>
+
+      <div class="ack-card">
+       <p class="ack-heading">
+        Former
+       </p>
+       <div class="ack-list compact">
+        <span class="ack-name">Prof. Damon Clark</span>, <span class="affiliation">Yale</span><br/>
+        <span class="ack-name">Prof. Andrew Leifer</span>, <span class="affiliation">Princeton</span><br/>
+        <span class="ack-name">Prof. V. Venkatachalam</span>, <span class="affiliation">Northeastern Univ</span><br/>
+        <span class="ack-name">Prof. Sahand Jamal</span>, <span class="affiliation">EPFL</span><br/>
+        <span class="ack-name">Prof. Quan Wen</span>, <span class="affiliation">USTC</span><br/>
+        <span class="ack-name">Prof. Guangwei Si</span>, <span class="affiliation">Beijing</span><br/>
+        <span class="ack-name">Prof. Ni Ji</span>, <span class="affiliation">Beijing</span><br/>
+        <span class="ack-name">Prof. Marc Gershow</span>, <span class="affiliation">NYU</span><br/>
+        <span class="ack-name">Prof. Mason Klein</span>, <span class="affiliation">UMiami</span>
+        <span class="ack-name">Prof. Chris Gabel</span>, <span class="affiliation">BU</span><br/>
+        <span class="ack-name">Prof. Luis Hernandez-Nunez</span>, <span class="affiliation">Stanford</span><br/>
+        <span class="ack-name">Prof. Chris Fang-Yen</span>, <span class="affiliation">Ohio State</span><br/>
+        <span class="ack-name">Prof. Ashley Carter</span>, <span class="affiliation">Amherst College</span><br/>
+        <span class="ack-name">Prof. Albert Kao</span>, <span class="affiliation">UMass Boston</span><br/>
+        <span class="ack-name">Dr. David Biron</span>, <span class="affiliation">University of Chicago</span>
+        <span class="ack-name">Dr. Katrin Vogt</span>, <span class="affiliation">University of Konstanz</span><br/><br>
+        <span class="ack-name">Dr. David Zimmerman</span>, <span class="affiliation">Yale</span><br/>
+        <span class="ack-name">Dr. Albert Lin</span>, <span class="affiliation">Princeton</span><br/>
+        <span class="ack-name">Dr. Subhaneil Lahiri</span>, <span class="affiliation">Stanford</span><br/>
+        <span class="ack-name">Dr. Jess Kanwal</span>, <span class="affiliation">Caltech</span><br/>
+        <span class="ack-name">Dr. Core Park</span>, <span class="affiliation">Harvard</span>
+       </div>
+      </div>
+
+      <div class="ack-card">
+       <div class="ack-group">
+        <p class="ack-heading">
+         Mei Zhen 
+        </p>
+        <div class="ack-list">
+         Hongruo Zhang<br/>
+         Dr. Daniel Witvliet<br/>
+         Dr. Ben Mulcahy<br/>
+         Dr. Wesley Hung
+        </div>
+       </div>
+
+       <div class="ack-group">
+        <p class="ack-heading">
+         John Calarco
+        </p>
+        <div class="ack-list">
+         John Laver<br/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+</div>
+</div>
+<script src="dist/reveal.js">
+</script>
+<script src="plugin/zoom/zoom.js">
+</script>
+<script src="plugin/notes/notes.js">
+</script>
+<script src="plugin/search/search.js">
+</script>
+<script src="plugin/markdown/markdown.js">
+</script>
+<script src="plugin/highlight/highlight.js">
+</script>
+<script src="plugin/math/math.js">
+</script>
+<script>
+   Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        history: true,
+        transition: 'linear',
+        mathjax2: {
+          config: 'TeX-AMS_HTML-full',
+          TeX: {
+            Macros: {
+              R: '\\mathbb{R}',
+              set: ['\\left\\{#1 \\; ; \\; #2\\right\\}', 2]
+            }
+          }
+        },
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath.MathJax2
+        ]
+      });
+  </script>
+</body>
+</html>
